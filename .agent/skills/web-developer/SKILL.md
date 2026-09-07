@@ -1,6 +1,6 @@
 ﻿---
 name: web-developer
-description: Construye y modifica sitios web usando exclusivamente HTML5 semántico, CSS3 moderno y JavaScript vanilla. No usar para React, Vue, Vite o gestores de paquetes npm.
+description: Construye interfaces web modernas utilizando exclusivamente HTML5 semántico, CSS3 avanzado y JavaScript vanilla. Aplica estándares visuales contemporáneos (Design Tokens, microinteracciones, layout fluido). No usar para frameworks (React/Vue) ni paquetes npm.
 triggers:
   - "pagina web"
   - "sitio web"
@@ -8,18 +8,30 @@ triggers:
   - "css"
   - "javascript"
   - "maquetar"
+  - "diseno"
+  - "ui"
 tools:
   - read_file
   - write_file
 ---
 
-# Reglas de Desarrollo Web Nativo
-1. **Estructura de Archivos Obligatoria:**
-   - `index.html`: Solo HTML5 semántico (`<header>`, `<main>`, `<section>`, `<footer>`). Prohibido código CSS o JS inline.
-   - `css/styles.css`: CSS3 con variables (Custom Properties), Flexbox y CSS Grid. Enfoque Mobile-First.
-   - `js/main.js`: Vanilla JavaScript moderno (ES6+), modular y sin dependencias externas ni CDNs no autorizados.
+# Reglas de Arquitectura y Código
+1. **Estructura de Archivos:**
+   - `index.html`: Marcado semántico riguroso (`<header>`, `<main>`, `<section>`, `<footer>`, `<nav>`). Prohibido estilos o scripts inline.
+   - `css/styles.css`: Estilos centrales desacoplados del markup.
+   - `js/main.js`: Lógica interactiva vanilla modular (ES6+).
 
-2. **Criterios de Calidad:**
-   - La interfaz debe ser responsive (adaptable a móviles y escritorio).
-   - Uso obligatorio de etiquetas semánticas para accesibilidad (a11y).
-   - No generar archivos `.min.js` ni bundlers.
+# Estándares de Diseño UI/UX Moderno
+1. **Sistema de Tokens CSS (en `:root`):**
+   - **Paleta de Color:** Definir variables semánticas (`--bg-primary`, `--bg-surface`, `--text-primary`, `--text-muted`, `--accent`, `--border-subtle`). Evitar contrastes crudos de negro `#000000` sobre blanco `#ffffff`.
+   - **Escala de Espaciado:** Basada estrictamente en múltiplos de 4px u 8px (`0.25rem`, `0.5rem`, `1rem`, `1.5rem`, `2rem`).
+   - **Tipografía Fluida:** Escalar tamaños de fuente usando `clamp()` para evitar saltos bruscos entre resoluciones.
+
+2. **Acabado Visual y Componentes:**
+   - **Bordes y Superficies:** Usar bordes semitransparentes sutiles (`1px solid rgba(255, 255, 255, 0.08)` o `rgba(0, 0, 0, 0.08)`) y radios de borde consistentes (`8px` a `16px`).
+   - **Elevación:** Prohibidas sombras duras; emplear sombras multicapa difusas con baja opacidad.
+   - **Microinteracciones:** Todas las transiciones de botones y enlaces deben ser suaves (`transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1)`). Definir estados explícitos para `:hover`, `:active` y `:focus-visible`.
+
+3. **Responsividad:**
+   - Enfoque *Mobile-First*.
+   - Prohibido el uso de anchos fijos en contenedores principales (`width: 1200px`); utilizar `width: 100%`, `max-width` y `margin-inline: auto`.
