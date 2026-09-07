@@ -1,0 +1,14 @@
+﻿{
+  "context": {
+    "max_system_prompt_tokens": 2000,
+    "rolling_summarization_threshold": 20000
+  },
+  "skills": {
+    "autoload_global": false,
+    "workspace_path": ".agent/skills"
+  },
+  "tools": {
+    "allowed_global": ["read_file", "write_file", "bash"],
+    "blocked_patterns": ["rm -rf *", "git push --force"]
+  }
+}
