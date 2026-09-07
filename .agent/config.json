@@ -9,6 +9,12 @@
   },
   "tools": {
     "allowed_global": ["read_file", "write_file", "bash"],
-    "blocked_patterns": ["rm -rf *", "git push --force"]
+    "blocked_patterns": [
+      "rm -rf *",
+      "git push --force",
+      "curl *",
+      "wget *",
+      "Invoke-WebRequest *"
+    ]
   }
 }
