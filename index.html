@@ -248,6 +248,11 @@
               <span class="zhub-icon" aria-hidden="true">🏢</span>
               <span>Residencial Colibrí</span>
             </button>
+            <button class="zone-hub-tab" role="tab" data-zone-tab="el-santuario" aria-selected="false"
+              aria-controls="zhpanel-el-santuario">
+              <span class="zhub-icon" aria-hidden="true">🏢</span>
+              <span>Urb. El Santuario</span>
+            </button>
           </div>
 
           <!-- Paneles de Zona -->
@@ -302,8 +307,7 @@
             <div class="zone-hub-panel" id="zhpanel-jardines-santa-rosa" role="tabpanel" hidden>
               <div class="zhpanel-col zhpanel-col--info">
                 <h3 class="zhpanel-name">Jardines de Santa Rosa</h3>
-                <p class="zhpanel-desc">Urb. Jardines de Santa Rosa, Sección 402, Mz. M Lote 12. Departamento con
-                  sala-comedor, lavandería y dormitorio principal con baño.</p>
+                <p class="zhpanel-desc">Urb. Jardines de Santa Rosa, paralela prolongación bolognesi antes de Villas del Norte.</p>
                 <div class="zhpanel-stats">
                   <div class="zhstat"><span class="zhstat-l">Disponibles</span><span class="zhstat-v">1 propiedad</span>
                   </div>
@@ -325,8 +329,7 @@
             <div class="zone-hub-panel" id="zhpanel-bancarios" role="tabpanel" hidden>
               <div class="zhpanel-col zhpanel-col--info">
                 <h3 class="zhpanel-name">Residencial Colibrí</h3>
-                <p class="zhpanel-desc">Av. Felipe Santiago Salaverry N° 1350, Dpto. E-302. Departamento moderno en 3er
-                  piso con balcón exterior, cocina equipada y patio.</p>
+                <p class="zhpanel-desc">Av. Felipe Santiago Salaverry N° 1350</p>
                 <div class="zhpanel-stats">
                   <div class="zhstat"><span class="zhstat-l">Disponibles</span><span class="zhstat-v">1 propiedad</span>
                   </div>
@@ -339,6 +342,24 @@
                 </div>
                 <button class="btn btn-primary btn-zone-filter" data-zone="bancarios"
                   aria-label="Ver la propiedad disponible en Residencial Colibrí">
+                  Ver la 1 propiedad →
+                </button>
+              </div>
+            </div>
+
+            <!-- Panel: Urb. El Santuario -->
+            <div class="zone-hub-panel" id="zhpanel-el-santuario" role="tabpanel" hidden>
+              <div class="zhpanel-col zhpanel-col--info">
+                <h3 class="zhpanel-name">Urb. El Santuario</h3>
+                <p class="zhpanel-desc">Urb. El Santuario. Zona residencial exclusiva y de alta demanda frente a parque.</p>
+                <div class="zhpanel-stats">
+                  <div class="zhstat"><span class="zhstat-l">Disponibles</span><span class="zhstat-v">1 propiedad</span></div>
+                  <div class="zhstat"><span class="zhstat-l">Tipo dominante</span><span class="zhstat-v">Casa / Residencia</span></div>
+                  <div class="zhstat"><span class="zhstat-l">Perfil de inversión</span><span class="zhstat-v">Exclusivo & residencial</span></div>
+                  <div class="zhstat"><span class="zhstat-l">Ubicación</span><span class="zhstat-v">Urb. El Santuario (Mz. M Lote A)</span></div>
+                </div>
+                <button class="btn btn-primary btn-zone-filter" data-zone="el-santuario"
+                  aria-label="Ver la propiedad disponible en Urb. El Santuario">
                   Ver la 1 propiedad →
                 </button>
               </div>
@@ -370,6 +391,8 @@
           <button class="chip" data-filter="jardines-santa-rosa" data-filter-type="zone" aria-pressed="false">Jardines
             S. Rosa</button>
           <button class="chip" data-filter="bancarios" data-filter-type="zone" aria-pressed="false">Residencial Colibrí
+         </button>
+         <button class="chip" data-filter="el-santuario" data-filter-type="zone" aria-pressed="false">El Santuario
          </button>
         </div>
         <p class="chip-result-label" id="chip-result-label" aria-live="polite">Mostrando 4 propiedades</p>
@@ -434,57 +457,62 @@
             </div>
           </article>
 
-          <!-- Propiedad 2: Planta Baja Esquina -->
-          <article class="property-card" tabindex="0" role="button" aria-label="Ver detalles de Planta Baja en Esquina"
-            data-zone="villas-norte" data-type="departamento" data-id="prop-004"
-            data-title="Planta Baja en Esquina (Vivienda o Comercio)" data-price="USD $120,000 (Negociable)"
-            data-location="Urb. Villas del Norte (1 cdra. Av. Colectora), Chiclayo" data-area="144 m²"
-            data-beds="3 habitaciones c/baño privado" data-baths="3 baños" data-status="Negociable"
-            data-finishes="Ubicación en esquina;3 accesos directos a la calle;Clósets empotrados;Apto vivienda o comercio;Alta conectividad"
+          <!-- Propiedad: Casa en Urb. El Santuario -->
+          <article class="property-card" tabindex="0" role="button" 
+            aria-label="Ver detalles de Casa en venta Frente a Parque en Urb. El Santuario" 
+            data-zone="el-santuario" 
+            data-type="casa" 
+            data-id="prop-004" 
+            data-title="Casa Frente a Parque en Urb. El Santuario" 
+            data-price="USD $480,000 (Negociable)" 
+            data-location="Urb. El Santuario, Mz. M Lote A, Chiclayo" 
+            data-area="238 m² (388 m² techados)" 
+            data-beds="5 habitaciones (4 c/baño privado)" 
+            data-baths="7 baños" 
+            data-status="Exclusivo" 
+            data-finishes="Piscina y doble terraza;Zona de parrillas;Dormitorio principal con walk-in closet;4 dormitorios con baño privado;Oficina y sala de estar TV;Estacionamiento y patio jardín;Cuarto de planchado y lavandería en azotea" 
             data-gallery="assets/planta_baja/1.jpg|assets/planta_baja/2.jpg|assets/planta_baja/3.jpg|assets/planta_baja/4.jpg">
+            
             <div class="card-image-wrapper card-img--photo" style="background-image: url('assets/planta_baja/1.jpg')">
-              <img src="assets/planta_baja/1.jpg" alt="Planta Baja en Esquina en Villas del Norte"
-                class="card-header-img" loading="lazy">
+              <img src="assets/planta_baja/1.jpg" alt="Casa Frente a Parque en Urb. El Santuario" class="card-header-img" loading="lazy">
               <div class="card-photo-count" aria-hidden="true">
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                  <path
-                    d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                  <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
                 </svg>
                 4 fotos
               </div>
               <span class="tag-status tag-status--negociable">Negociable</span>
-              <button class="btn-card-wa" aria-label="Consultar Planta Baja en Esquina por WhatsApp">
+              <button class="btn-card-wa" aria-label="Consultar Casa en Urb. El Santuario por WhatsApp">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                  <path
-                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
                 </svg>
                 Consultar
               </button>
             </div>
+
             <div class="card-body">
               <div class="card-panel card-panel--active" data-card-panel="general">
-                <span class="price">USD $120,000 <span class="price-note">(Negociable)</span></span>
-                <h3>Planta Baja en Esquina (Vivienda o Comercio)</h3>
-                <p class="location">Urb. Villas del Norte (1 cdra. Av. Colectora)</p>
+                <span class="price">USD $480,000 <span class="price-note">(Negociable)</span></span>
+                <h3>Casa Frente a Parque en Urb. El Santuario</h3>
+                <p class="location">Urb. El Santuario, Mz. M Lote A, Chiclayo</p>
                 <div class="specs">
-                  <span class="spec-item"><span class="spec-icon" aria-hidden="true">▪</span>144 m²</span>
+                  <span class="spec-item"><span class="spec-icon" aria-hidden="true">▪</span>238 m²</span>
                   <span class="spec-sep" aria-hidden="true"></span>
-                  <span class="spec-item"><span class="spec-icon" aria-hidden="true">🛏</span>3 Hab c/baño</span>
+                  <span class="spec-item"><span class="spec-icon" aria-hidden="true">🛏</span>5 Hab</span>
                   <span class="spec-sep" aria-hidden="true"></span>
-                  <span class="spec-item"><span class="spec-icon" aria-hidden="true">🚪</span>3 accesos</span>
+                  <span class="spec-item"><span class="spec-icon" aria-hidden="true">🏊</span>Piscina</span>
                 </div>
                 <div class="card-features">
                   <span class="card-features-label">Características</span>
                   <div class="card-finish-chips">
-                    <span class="finish-chip">Esquina</span>
-                    <span class="finish-chip">3 accesos</span>
-                    <span class="finish-chip">Clósets</span>
+                    <span class="finish-chip">Piscina</span>
+                    <span class="finish-chip">Parrilla</span>
+                    <span class="finish-chip">Jardín</span>
                   </div>
                 </div>
               </div>
               <div class="card-cta-footer">
-                <button class="btn-link btn-quickview" aria-label="Ver detalles de Planta Baja en Esquina">Ver detalles
-                  →</button>
+                <button class="btn-link btn-quickview" aria-label="Ver detalles de Casa en Urb. El Santuario">Ver detalles →</button>
               </div>
             </div>
           </article>
