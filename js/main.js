@@ -523,18 +523,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* =============================================
-     VISOR MODAL & LIGHTBOX DE RENDERS (VIVIENDA Y-41)
+     VISOR MODAL & LIGHTBOX DE RENDERS (DINÁMICO)
+     Funciona para cualquier botón .btn-view-renders
+     usando data-title y data-gallery del botón pulsado
      ============================================= */
   const y41Modal = document.getElementById('modal-y41-backdrop');
-  const openY41Btn = document.getElementById('btn-trigger-y41-modal');
   const closeY41Btn = document.getElementById('btn-close-y41-modal');
 
-  // Modal Y-41 Open/Close
-  if (openY41Btn && y41Modal) {
-    openY41Btn.addEventListener('click', () => {
-      y41Modal.classList.add('active');
-      y41Modal.setAttribute('aria-hidden', 'false');
-      document.body.style.overflow = 'hidden';
+  // Modal Y-41 Open/Close (se mantiene para el botón Y-41 si abre su panel propio)
+  if (y41Modal) {
+    if (closeY41Btn) closeY41Btn.addEventListener('click', closeY41Modal);
+    y41Modal.addEventListener('click', (e) => {
+      if (e.target === y41Modal) closeY41Modal();
     });
   }
 
@@ -545,15 +545,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.body.style.overflow = '';
   }
 
-  if (closeY41Btn) closeY41Btn.addEventListener('click', closeY41Modal);
-
-  if (y41Modal) {
-    y41Modal.addEventListener('click', (e) => {
-      if (e.target === y41Modal) closeY41Modal();
-    });
-  }
-
-  // Tabs del Visor Y-41
+  // Tabs del Visor Y-41 (panel interior del modal, sin cambios)
   const y41TabBtns = document.querySelectorAll('.y41-tab-btn');
   const y41TabPanes = document.querySelectorAll('.y41-tab-pane');
 
@@ -575,16 +567,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Lightbox de Renders 3D (7 vistas JPEGs de assets/Y-41/)
-  const rendersData = [
-    { src: 'assets/Y-41/1.jpeg', title: '1. Fachada Principal Iluminada' },
-    { src: 'assets/Y-41/2.jpeg', title: '2. Sala a Doble Altura con Iluminación LED' },
-    { src: 'assets/Y-41/3.jpeg', title: '3. Cocina Americana con Isla y Acabados de Madera' },
-    { src: 'assets/Y-41/4.jpeg', title: '4. Terraza y Patio Posterior con Zona de Parrilla' },
-    { src: 'assets/Y-41/5.jpeg', title: '5. Suite Principal con Iluminación Cálida' },
-    { src: 'assets/Y-41/6.jpeg', title: '6. Walk-in Closet de Concepto Abierto' },
-    { src: 'assets/Y-41/7.jpeg', title: '7. Vista Exterior Diurna/Perspectiva' }
-  ];
+  // ── Lightbox dinámico ──────────────────────────────────────────────────────
+  // Los datos de renders se cargan en tiempo real desde el botón pulsado.
+  let rendersData = [];
 
   const lightboxBackdrop = document.getElementById('y41-lightbox-backdrop');
   const lightboxImg = document.getElementById('y41-lightbox-img');
@@ -597,6 +582,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentRenderIndex = 0;
 
   function showLightboxRender(index) {
+    if (!rendersData.length) return;
     currentRenderIndex = (index + rendersData.length) % rendersData.length;
     const render = rendersData[currentRenderIndex];
 
@@ -617,15 +603,17 @@ document.addEventListener('DOMContentLoaded', () => {
     showLightboxRender(index);
     lightboxBackdrop.classList.add('active');
     lightboxBackdrop.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
   }
 
   function closeLightbox() {
     if (!lightboxBackdrop) return;
     lightboxBackdrop.classList.remove('active');
     lightboxBackdrop.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
   }
 
-  // Delegación de clic en items de render
+  // Delegación de clic en items de render (grid Y-41 dentro del modal)
   const rendersGrid = document.getElementById('y41-renders-grid');
   if (rendersGrid) {
     rendersGrid.addEventListener('click', (e) => {
@@ -636,6 +624,35 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // ── Botones .btn-view-renders → lightbox dinámico ─────────────────────────
+  document.querySelectorAll('.btn-view-renders').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const gallery = btn.getAttribute('data-gallery') || '';
+      const projectTitle = btn.getAttribute('data-title') || 'Proyecto';
+
+      // Construir rendersData dinámicamente desde data-gallery
+      const srcs = gallery.split('|').filter(Boolean);
+      rendersData = srcs.map((src, i) => ({
+        src: src.trim(),
+        title: `${projectTitle} — Vista ${i + 1}`
+      }));
+
+      if (!rendersData.length) return;
+
+      // Si el botón es el Y-41 original, además abre su modal propio
+      if (btn.id === 'btn-trigger-y41-modal' && y41Modal) {
+        y41Modal.classList.add('active');
+        y41Modal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+
+      // Para Nogales (y cualquier otro btn-view-renders sin modal propio), abre el lightbox directamente
+      if (btn.id !== 'btn-trigger-y41-modal') {
+        openLightbox(0);
+      }
+    });
+  });
 
   if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
   if (lightboxPrevBtn) lightboxPrevBtn.addEventListener('click', () => showLightboxRender(currentRenderIndex - 1));
@@ -660,6 +677,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (e.key === 'Escape') closeY41Modal();
     }
   });
+
 
   /* =============================================
      VISOR DE IMÁGENES TERRENO (#terrenos)
