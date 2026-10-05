@@ -1,6 +1,6 @@
-﻿node_modules/
+node_modules/
 *.log
-.agent/cache/
+.agent/
 dist/
 build/
 .env

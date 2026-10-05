@@ -94,6 +94,13 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Imágenes responsivas — evita colapso en pantallas pequeñas (Safari iOS) */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
 /* =============================================
    LAYOUT
    ============================================= */

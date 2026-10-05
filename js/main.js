@@ -180,6 +180,12 @@ document.addEventListener('DOMContentLoaded', () => {
       img.src = src;
       img.alt = `Foto ${i + 1}`;
       img.loading = i === 0 ? 'eager' : 'lazy';
+      img.style.maxWidth = '100%';
+      img.style.height = 'auto';
+      img.onerror = function () {
+        this.style.display = 'none';
+        slide.style.background = 'var(--bg-surface, #EDE8DF)';
+      };
       slide.appendChild(img);
       if (carouselTrack) carouselTrack.appendChild(slide);
 
@@ -191,6 +197,9 @@ document.addEventListener('DOMContentLoaded', () => {
       tImg.src = src;
       tImg.alt = `Miniatura ${i + 1}`;
       tImg.loading = 'lazy';
+      tImg.style.maxWidth = '100%';
+      tImg.style.height = 'auto';
+      tImg.onerror = function () { this.style.display = 'none'; };
       thumb.appendChild(tImg);
       thumb.addEventListener('click', () => goToSlide(i));
       if (thumbsWrap) thumbsWrap.appendChild(thumb);
@@ -594,6 +603,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (lightboxImg) {
       lightboxImg.src = render.src;
       lightboxImg.alt = render.title;
+      lightboxImg.onerror = function () {
+        this.alt = '⚠ Imagen no disponible';
+        this.style.opacity = '0.3';
+      };
     }
     if (lightboxCaption) lightboxCaption.textContent = render.title;
     if (lightboxCounter) lightboxCounter.textContent = `${currentRenderIndex + 1} / ${rendersData.length}`;
