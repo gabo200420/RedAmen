@@ -679,36 +679,44 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
 
-  /* =============================================
-     VISOR DE IMÁGENES TERRENO (#terrenos)
-     Tabs: "Vista Satelital" / "Plano Perimétrico"
-     ============================================= */
-  const terrenoTabBtns = document.querySelectorAll('.terreno-img-tab');
+/* =======================================================
+   VISOR DE IMÁGENES TERRENO (Modular e Independiente)
+======================================================= */
+document.querySelectorAll('.terreno-card').forEach(card => {
+  const tabs = card.querySelectorAll('.terreno-img-tab');
+  const panels = card.querySelectorAll('.terreno-img-panel');
 
-  terrenoTabBtns.forEach(btn => {
+  tabs.forEach(btn => {
     btn.addEventListener('click', () => {
-      const targetId = `terreno-view-${btn.getAttribute('data-terreno-tab')}`;
+      const tabKey = btn.getAttribute('data-terreno-tab');
 
-      // Actualizar estado de tabs
-      terrenoTabBtns.forEach(b => {
-        b.classList.remove('terreno-img-tab--active');
-        b.setAttribute('aria-selected', 'false');
+      // 1. Desactivar solo los botones de esta tarjeta
+      tabs.forEach(t => {
+        t.classList.remove('terreno-img-tab--active');
+        t.setAttribute('aria-selected', 'false');
       });
+
+      // 2. Ocultar solo los paneles de esta tarjeta
+      panels.forEach(p => {
+        p.setAttribute('hidden', '');
+        p.classList.remove('terreno-img-panel--active');
+      });
+
+      // 3. Activar el botón presionado
       btn.classList.add('terreno-img-tab--active');
       btn.setAttribute('aria-selected', 'true');
 
-      // Mostrar panel correcto
-      document.querySelectorAll('.terreno-img-panel').forEach(panel => {
-        if (panel.id === targetId) {
-          panel.removeAttribute('hidden');
-          panel.classList.add('terreno-img-panel--active');
-        } else {
-          panel.setAttribute('hidden', '');
-          panel.classList.remove('terreno-img-panel--active');
-        }
-      });
+      // 4. Mostrar el panel correspondiente dentro de esta misma tarjeta
+      const targetPanel = card.querySelector(`[data-terreno-panel="${tabKey}"]`) 
+                       || card.querySelector(`#terreno-view-${tabKey}`);
+
+      if (targetPanel) {
+        targetPanel.removeAttribute('hidden');
+        targetPanel.classList.add('terreno-img-panel--active');
+      }
     });
   });
+});
 
 });
 

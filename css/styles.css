@@ -3784,6 +3784,15 @@ input:focus {
   }
 }
 
+/* Separación entre tarjetas de terreno consecutivas */
+.terreno-card {
+  margin-bottom: 2.5rem; /* ~40px de espacio limpio */
+}
+
+.terreno-card:last-child {
+  margin-bottom: 0;
+}
+
 /* ── COLUMNA MEDIA (visor de imágenes) ── */
 .terreno-media-col {
   position: relative;
