@@ -336,7 +336,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // URL WhatsApp del modal
-    const id = card.getAttribute('data-id') || '';
     const waMessage = `Hola RedAmen Inmuebles, deseo información y agendar visita para ${title} (Código: ${id}).`;
     waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
 
