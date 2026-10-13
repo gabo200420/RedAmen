@@ -146,9 +146,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleCardWA(card) {
     if (!card) return;
     const title = card.getAttribute('data-title') || '';
-    const location = card.getAttribute('data-location') || card.getAttribute('data-zone') || '';
     const id = card.getAttribute('data-id') || '';
-    const message = `Hola RedAmen Inmuebles, deseo información y agendar visita para ${title} en ${location} (Código: ${id}).`;
+    const message = `Hola RedAmen Inmuebles, deseo información y agendar visita para ${title} (Código: ${id}).`;
     openWhatsApp(message);
   }
 
@@ -338,7 +337,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // URL WhatsApp del modal
     const id = card.getAttribute('data-id') || '';
-    const waMessage = `Hola RedAmen Inmuebles, deseo información y agendar visita para ${title} en ${location} (Código: ${id}).`;
+    const waMessage = `Hola RedAmen Inmuebles, deseo información y agendar visita para ${title} (Código: ${id}).`;
     waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
 
     modal.removeAttribute('hidden');
@@ -377,6 +376,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const waCardBtn = e.target.closest('.btn-card-wa');
       if (!waCardBtn) return;
       e.stopPropagation();
+      if (waCardBtn.tagName === 'A' && waCardBtn.hasAttribute('href')) {
+        return;
+      }
       const card = waCardBtn.closest('.property-card');
       handleCardWA(card);
     });
