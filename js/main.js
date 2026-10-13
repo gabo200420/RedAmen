@@ -146,8 +146,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleCardWA(card) {
     if (!card) return;
     const title = card.getAttribute('data-title') || '';
-    const location = card.getAttribute('data-location') || '';
-    const message = `Hola RedAmen Inmuebles, deseo agendar una visita para la propiedad: ${title} en ${location}`;
+    const location = card.getAttribute('data-location') || card.getAttribute('data-zone') || '';
+    const id = card.getAttribute('data-id') || '';
+    const message = `Hola RedAmen Inmuebles, deseo información y agendar visita para ${title} en ${location} (Código: ${id}).`;
     openWhatsApp(message);
   }
 
@@ -336,7 +337,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // URL WhatsApp del modal
-    const waMessage = `Hola RedAmen Inmuebles, deseo agendar una visita para la propiedad: ${title} en ${location}`;
+    const id = card.getAttribute('data-id') || '';
+    const waMessage = `Hola RedAmen Inmuebles, deseo información y agendar visita para ${title} en ${location} (Código: ${id}).`;
     waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
 
     modal.removeAttribute('hidden');

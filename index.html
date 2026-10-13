@@ -9,7 +9,7 @@
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/portada/logo.png">
   <link rel="apple-touch-icon" href="/assets/portada/logo.png">
 
-  <!-- 2. DATOS ESTRUCTURADOS PARA QUE GOOGLE ASOCIE TU LOGO A LA MARCA -->
+  <!-- DATOS ESTRUCTURADOS SCHEMA.ORG — RealEstateAgent + Logo -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -27,7 +27,7 @@
     }
   }
   </script>
-  
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SPHWJ29327"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -68,17 +68,43 @@
     rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Datos Estructurados Schema.org (JSON-LD) -->
+  <!-- ============================================================
+       DATOS ESTRUCTURADOS SCHEMA.ORG — JSON-LD EXHAUSTIVO
+       RealEstateAgent + 11 Propiedades (ItemList) + Servicio
+       ============================================================ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@graph": [
+
       {
         "@type": "RealEstateAgent",
         "@id": "https://redameninmuebles.com/#agent",
         "name": "RedAmen Inmuebles",
-        "description": "Te facilitamos el cómo… Compra, Vende, Alquila o Construye en Chiclayo",
-        "telephone": "+51 987 723 930",
+        "url": "https://redameninmuebles.com/",
+        "logo": "https://redameninmuebles.com/assets/portada/logo.png",
+        "image": "https://redameninmuebles.com/assets/portada/logo.png",
+        "description": "Te facilitamos el cómo… Compra, Vende, Alquila o Construye en Chiclayo. Más de 30 años de experiencia en el mercado inmobiliario de Lambayeque.",
+        "slogan": "Te facilitamos el cómo…",
+        "telephone": ["+51987723930", "+51997036120"],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "telephone": "+51987723930",
+            "contactType": "customer service",
+            "contactOption": "TollFree",
+            "areaServed": "PE",
+            "availableLanguage": "Spanish"
+          },
+          {
+            "@type": "ContactPoint",
+            "telephone": "+51997036120",
+            "contactType": "customer service",
+            "contactOption": "TollFree",
+            "areaServed": "PE",
+            "availableLanguage": "Spanish"
+          }
+        ],
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Chiclayo",
@@ -86,16 +112,46 @@
           "addressCountry": "PE"
         },
         "areaServed": [
-          "Santa Victoria",
-          "Los Sauces",
-          "Villas del Norte",
-          "Pimentel"
-        ]
+          "Santa Victoria, Chiclayo",
+          "Los Sauces, Chiclayo",
+          "Villas del Norte, Chiclayo",
+          "Pimentel, Lambayeque",
+          "Monsefú, Lambayeque"
+        ],
+        "sameAs": ["https://redameninmuebles.com/"]
       },
+
+      {
+        "@type": "Service",
+        "@id": "https://redameninmuebles.com/#servicio-construccion",
+        "name": "Construcción y Proyectos a Medida",
+        "description": "Construimos tu casa desde cero en tu lote. Incluye diseño arquitectónico personalizado, gestión de licencias municipales y avance controlado por hitos de obra. Asesoramos en financiamiento hipotecario.",
+        "provider": { "@id": "https://redameninmuebles.com/#agent" },
+        "serviceType": "Construcción de viviendas a medida",
+        "areaServed": {
+          "@type": "Place",
+          "name": "Chiclayo, Pimentel y alrededores, Lambayeque, Perú"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Etapas del Servicio de Construcción",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Diseño Arquitectónico" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Licencias Municipales" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Construcción por Hitos de Obra" } },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Asesoría en Crédito Hipotecario" } }
+          ]
+        }
+      },
+
       {
         "@type": "ItemList",
-        "name": "Propiedades Destacadas de RedAmen Inmuebles",
+        "@id": "https://redameninmuebles.com/#catalogo",
+        "name": "Catálogo Oficial de Propiedades — RedAmen Inmuebles",
+        "description": "11 propiedades en venta en Chiclayo, Pimentel y Monsefú: departamentos, casas, oficinas, preventas y terrenos.",
+        "numberOfItems": 11,
         "itemListElement": [
+
           {
             "@type": "ListItem",
             "position": 1,
@@ -103,75 +159,85 @@
               "@type": "Apartment",
               "@id": "https://redameninmuebles.com/#prop-001",
               "name": "Depa #902 con Jacuzzi y Vista Exterior",
-              "description": "Departamento exclusivo con jacuzzi y vista exterior en Urb. Santa Victoria, Chiclayo.",
-              "floorSize": {
-                "@type": "QuantitativeValue",
-                "value": 152,
-                "unitCode": "MTK"
-              },
+              "description": "Departamento exclusivo piso 9 con jacuzzi privado, acabados en granito, sala-comedor con balcón, estudio, cuarto de servicio y vista exterior en Urb. Santa Victoria, Chiclayo.",
+              "numberOfRooms": 3,
+              "numberOfBathroomsTotal": 4,
+              "floorSize": { "@type": "QuantitativeValue", "value": 152, "unitCode": "MTK" },
+              "amenityFeature": [
+                { "@type": "LocationFeatureSpecification", "name": "Jacuzzi privado", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Acabados en granito", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Vista exterior", "value": true }
+              ],
               "address": {
                 "@type": "PostalAddress",
+                "streetAddress": "Urb. Santa Victoria, Av. Santa Victoria cdra. 7 esq. Los Mirtos",
                 "addressLocality": "Chiclayo",
                 "addressRegion": "Lambayeque",
-                "streetAddress": "Santa Victoria"
+                "addressCountry": "PE"
               },
               "offers": {
                 "@type": "Offer",
                 "price": "170000",
                 "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock"
+                "availability": "https://schema.org/InStock",
+                "seller": { "@id": "https://redameninmuebles.com/#agent" }
               }
             }
           },
+
           {
             "@type": "ListItem",
             "position": 2,
             "item": {
               "@type": "SingleFamilyResidence",
               "@id": "https://redameninmuebles.com/#prop-002",
-              "name": "Casa Residencia en Los Sauces",
-              "description": "Casa residencial ubicada en Urb. Los Sauces, Chiclayo.",
+              "name": "Casa Frente a Parque (Proyección a 4 Pisos)",
+              "description": "Casa residencial frente a parque con proyección para construir hasta 4 pisos, 3 habitaciones y 3 baños en Urb. Los Sauces, Chiclayo. Oportunidad de inversión.",
+              "numberOfRooms": 3,
+              "numberOfBathroomsTotal": 3,
               "address": {
                 "@type": "PostalAddress",
+                "streetAddress": "Urb. Los Sauces",
                 "addressLocality": "Chiclayo",
                 "addressRegion": "Lambayeque",
-                "streetAddress": "Los Sauces"
+                "addressCountry": "PE"
               },
               "offers": {
                 "@type": "Offer",
                 "price": "435000",
                 "priceCurrency": "PEN",
-                "availability": "https://schema.org/InStock"
+                "availability": "https://schema.org/InStock",
+                "seller": { "@id": "https://redameninmuebles.com/#agent" }
               }
             }
           },
+
           {
             "@type": "ListItem",
             "position": 3,
             "item": {
-              "@type": "CommercialBuilding",
+              "@type": "Accommodation",
               "@id": "https://redameninmuebles.com/#prop-003",
-              "name": "Edificio Comercial en Santa Victoria",
-              "description": "Propiedad comercial ideal para oficinas o empresa en Santa Victoria, Chiclayo.",
-              "floorSize": {
-                "@type": "QuantitativeValue",
-                "value": 220,
-                "unitCode": "MTK"
-              },
+              "name": "Edificio Corporativo: 11 Oficinas Independientes",
+              "description": "Edificio de alta rentabilidad con 11 oficinas independientes, 220 m² de área construida en Urb. Santa Victoria, Chiclayo. Ideal para inversión inmobiliaria.",
+              "floorSize": { "@type": "QuantitativeValue", "value": 220, "unitCode": "MTK" },
               "address": {
                 "@type": "PostalAddress",
+                "streetAddress": "Urb. Santa Victoria",
                 "addressLocality": "Chiclayo",
                 "addressRegion": "Lambayeque",
-                "streetAddress": "Santa Victoria"
+                "addressCountry": "PE"
               },
               "offers": {
                 "@type": "Offer",
                 "price": "700000",
                 "priceCurrency": "PEN",
-                "availability": "https://schema.org/InStock"
+                "availability": "https://schema.org/InStock",
+                "seller": { "@id": "https://redameninmuebles.com/#agent" }
               }
             }
           },
+
           {
             "@type": "ListItem",
             "position": 4,
@@ -179,28 +245,229 @@
               "@type": "Apartment",
               "@id": "https://redameninmuebles.com/#prop-004",
               "name": "Planta Baja en Esquina (Vivienda o Comercio)",
-              "description": "Departamento en planta baja en esquina, apto para vivienda o comercio en Villas del Norte, Chiclayo.",
-              "floorSize": {
-                "@type": "QuantitativeValue",
-                "value": 144,
-                "unitCode": "MTK"
-              },
+              "description": "Departamento en planta baja en ubicación de esquina, apto para vivienda o comercio. 144 m², 3 habitaciones, 3 baños, triple acceso a calle. Urb. Villas del Norte, Chiclayo. Precio negociable.",
+              "numberOfRooms": 3,
+              "numberOfBathroomsTotal": 3,
+              "floorSize": { "@type": "QuantitativeValue", "value": 144, "unitCode": "MTK" },
               "address": {
                 "@type": "PostalAddress",
+                "streetAddress": "Urb. Villas del Norte, Mz. B Lote 29",
                 "addressLocality": "Chiclayo",
                 "addressRegion": "Lambayeque",
-                "streetAddress": "Villas del Norte"
+                "addressCountry": "PE"
               },
               "offers": {
                 "@type": "Offer",
                 "price": "120000",
                 "priceCurrency": "USD",
-                "availability": "https://schema.org/InStock"
+                "availability": "https://schema.org/InStock",
+                "priceSpecification": { "@type": "PriceSpecification", "description": "Negociable" },
+                "seller": { "@id": "https://redameninmuebles.com/#agent" }
+              }
+            }
+          },
+
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "SingleFamilyResidence",
+              "@id": "https://redameninmuebles.com/#prop-005",
+              "name": "Casa Comercial en Calle Sauces",
+              "description": "Casa comercial de 184 m² en Calle Sauces 632, Urb. Santa Victoria, Chiclayo. A 20 m de Av. Libertad, frente a Calle Álamos. 1 piso con aires libres para proyección. Zona muy comercial.",
+              "floorSize": { "@type": "QuantitativeValue", "value": 184, "unitCode": "MTK" },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Calle Sauces 632, Urb. Santa Victoria",
+                "addressLocality": "Chiclayo",
+                "addressRegion": "Lambayeque",
+                "addressCountry": "PE"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "240000",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "seller": { "@id": "https://redameninmuebles.com/#agent" }
+              }
+            }
+          },
+
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "Apartment",
+              "@id": "https://redameninmuebles.com/#prop-006",
+              "name": "Departamento 1er Piso en Esquina",
+              "description": "Departamento en primer piso, ubicación en esquina con triple acceso. 144 m², 3 habitaciones con baño, apto para vivienda o negocio. Urb. Villas del Norte, Chiclayo.",
+              "numberOfRooms": 3,
+              "numberOfBathroomsTotal": 3,
+              "floorSize": { "@type": "QuantitativeValue", "value": 144, "unitCode": "MTK" },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Urb. Villas del Norte",
+                "addressLocality": "Chiclayo",
+                "addressRegion": "Lambayeque",
+                "addressCountry": "PE"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "112000",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "seller": { "@id": "https://redameninmuebles.com/#agent" }
+              }
+            }
+          },
+
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "SingleFamilyResidence",
+              "@id": "https://redameninmuebles.com/#prop-007",
+              "name": "Casa Nueva mejor que de segunda",
+              "description": "Casa en preventa exclusiva de estreno. 132.53 m² de terreno, 212.92 m² techados en 3 niveles. Cochera doble, sala doble altura, cocina con isla, walk-in closet, zona BBQ. Urb. Los Nogales, Chiclayo.",
+              "numberOfRooms": 4,
+              "numberOfBathroomsTotal": 5,
+              "floorSize": { "@type": "QuantitativeValue", "value": 132.53, "unitCode": "MTK" },
+              "amenityFeature": [
+                { "@type": "LocationFeatureSpecification", "name": "Cochera doble", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Sala doble altura", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Cocina con isla", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Walk-in Closet", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Zona BBQ", "value": true }
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Urb. Los Nogales",
+                "addressLocality": "Chiclayo",
+                "addressRegion": "Lambayeque",
+                "addressCountry": "PE"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "180000",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/PreOrder",
+                "priceSpecification": { "@type": "PriceSpecification", "description": "Precio Preventa — 20% inicial, saldo contra entrega" },
+                "seller": { "@id": "https://redameninmuebles.com/#agent" }
+              }
+            }
+          },
+
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "item": {
+              "@type": "SingleFamilyResidence",
+              "@id": "https://redameninmuebles.com/#prop-008",
+              "name": "Casa Moderna con Piscina",
+              "description": "Casa en preventa exclusiva con piscina privada, zona social, cochera independiente y acabados de estreno. 210 m² techados. Urb. Los Nogales, Pimentel / Chiclayo.",
+              "floorSize": { "@type": "QuantitativeValue", "value": 210, "unitCode": "MTK" },
+              "amenityFeature": [
+                { "@type": "LocationFeatureSpecification", "name": "Piscina privada", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Zona social", "value": true },
+                { "@type": "LocationFeatureSpecification", "name": "Cochera independiente", "value": true }
+              ],
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Urb. Los Nogales, Pimentel",
+                "addressLocality": "Pimentel",
+                "addressRegion": "Lambayeque",
+                "addressCountry": "PE"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "212000",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/PreOrder",
+                "priceSpecification": { "@type": "PriceSpecification", "description": "Precio Preventa — 20% inicial, saldo contra entrega" },
+                "seller": { "@id": "https://redameninmuebles.com/#agent" }
+              }
+            }
+          },
+
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "item": {
+              "@type": "LandmarksOrHistoricalBuildings",
+              "@id": "https://redameninmuebles.com/#prop-009",
+              "name": "Terreno en Esquina — Hab. Urbana Las Villas del Sol",
+              "description": "Terreno exclusivo en esquina de 1,010.30 m² en Habilitación Urbana Las Villas del Sol I Etapa, Chiclayo. 40.91 m de frente sobre Av. Colectora. Partida registral saneada. Apto para condominios, multifamiliar o comercial.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Lote N° 01, Mz. F, Habilitación Urbana Las Villas del Sol I Etapa",
+                "addressLocality": "Chiclayo",
+                "addressRegion": "Lambayeque",
+                "addressCountry": "PE"
+              },
+              "geo": { "@type": "GeoCoordinates", "addressCountry": "PE" },
+              "offers": {
+                "@type": "Offer",
+                "price": "800000",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "seller": { "@id": "https://redameninmuebles.com/#agent" }
+              }
+            }
+          },
+
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "item": {
+              "@type": "LandmarksOrHistoricalBuildings",
+              "@id": "https://redameninmuebles.com/#prop-010",
+              "name": "Lote Amplio con Gran Frente — Monsefú",
+              "description": "Lote de 626.97 m² en Monsefú, Lambayeque. 17.55 m de frente, subdivisible en 2 lotes de ~313 m². Cercado con 2 medios baños. Precio bajo mercado S/ 351/m². Documentación saneada. Ideal casa huerta, almacén o taller.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Sub Lote B UC 094057, Sector Ellen - La Cofradía N.º 2",
+                "addressLocality": "Monsefú",
+                "addressRegion": "Lambayeque",
+                "addressCountry": "PE"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "220000",
+                "priceCurrency": "PEN",
+                "availability": "https://schema.org/InStock",
+                "seller": { "@id": "https://redameninmuebles.com/#agent" }
+              }
+            }
+          },
+
+          {
+            "@type": "ListItem",
+            "position": 11,
+            "item": {
+              "@type": "LandmarksOrHistoricalBuildings",
+              "@id": "https://redameninmuebles.com/#prop-011",
+              "name": "Macrolote Costero de 0.5 ha — Pimentel / Santa Rosa",
+              "description": "Macrolote de 5,000.27 m² (0.5 ha) en franja costera Pimentel – Santa Rosa, Lambayeque. Dimensiones ≈129 m × 39 m. Precio USD $50/m². Partida SUNARP 11436145 independizada. Apto para condominio, hotel, lotización o desarrollo turístico.",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Franja Costera Pimentel – Santa Rosa",
+                "addressLocality": "Pimentel",
+                "addressRegion": "Lambayeque",
+                "addressCountry": "PE"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "250000",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "seller": { "@id": "https://redameninmuebles.com/#agent" }
               }
             }
           }
+
         ]
       }
+
     ]
   }
   </script>
@@ -444,11 +711,11 @@
         <!-- Grid de Propiedades -->
         <div class="cards-grid" id="properties-container">
 
-          <!-- Propiedad 1: Depa #902 -->
-          <article class="property-card" tabindex="0" role="button"
+          <!-- Propiedad 1: Depa #902 — prop-001 -->
+          <article id="prop-001" class="property-card" tabindex="0" role="button"
             aria-label="Ver detalles de Depa #902 con Jacuzzi y Vista Exterior" data-zone="santa-victoria"
             data-type="departamento" data-id="prop-001" data-title="Depa #902 con Jacuzzi y Vista Exterior"
-            data-price="USD $169,000"
+            data-price="USD $170,000"
             data-location="Urb. Santa Victoria (Av. Santa Victoria cdra. 7, esq. Los Mirtos), Chiclayo"
             data-area="152 m²" data-beds="3 habitaciones" data-baths="4 baños" data-status="Exclusivo"
             data-finishes="Jacuzzi privado;Acabados en granito;Vista exterior;Sala comedor con balcón vista a calle;Estudio;Cocina amplia;Lavandería;Cuarto de servicio"
@@ -502,9 +769,9 @@
           </article>
 
           <!-- Propiedad: Casa en Urb. El Santuario -->
-          <article class="property-card" tabindex="0" role="button"
+          <article id="prop-002-santuario" class="property-card" tabindex="0" role="button"
             aria-label="Ver detalles de Casa en venta Frente a Parque en Urb. El Santuario" data-zone="el-santuario"
-            data-type="casa" data-id="prop-004" data-title="Casa Frente a Parque en Urb. El Santuario"
+            data-type="casa" data-id="prop-002-santuario" data-title="Casa Frente a Parque en Urb. El Santuario"
             data-price="USD $480,000 (Negociable)" data-location="Urb. El Santuario, Mz. M Lote A, Chiclayo"
             data-area="238 m² (388 m² techados)" data-beds="5 habitaciones (4 c/baño privado)" data-baths="7 baños"
             data-status="Exclusivo"
@@ -560,9 +827,9 @@
           </article>
 
           <!-- Propiedad 3: Jardines de Santa Rosa -->
-          <article class="property-card" tabindex="0" role="button"
+          <article id="prop-jardines" class="property-card" tabindex="0" role="button"
             aria-label="Ver detalles de Departamento en Jardines de Santa Rosa" data-zone="jardines-santa-rosa"
-            data-type="departamento" data-id="prop-005" data-title="Departamento en Jardines de Santa Rosa"
+            data-type="departamento" data-id="prop-jardines" data-title="Departamento en Jardines de Santa Rosa"
             data-price="S/175,000" data-location="Urb. Jardines de Santa Rosa (Secc. 402, Mz. M Lote 12), Chiclayo"
             data-area="78 m²" data-beds="3 habitaciones" data-baths="2 baños" data-status="Disponible"
             data-finishes="Sala-comedor;Cocina con reposteros altos y bajos;Lavandería;Dormitorio principal con baño y clóset;Dos dormitorios secundarios con closet;Intercomunicador y portero electrico a la calle;7 muy buenos vecinos "
@@ -618,9 +885,9 @@
           </article>
 
           <!-- Propiedad 4: Residencial Colibrí -->
-          <article class="property-card" tabindex="0" role="button"
+          <article id="prop-colibri" class="property-card" tabindex="0" role="button"
             aria-label="Ver detalles de Departamento E-302 en Residencial Colibrí" data-zone="bancarios"
-            data-type="departamento" data-id="prop-006" data-title="Departamento E-302 en Residencial Colibrí"
+            data-type="departamento" data-id="prop-colibri" data-title="Departamento E-302 en Residencial Colibrí"
             data-price="S/235,000"
             data-location="Av. Felipe Santiago Salaverry N° 1350, Dpto. E-302, Residencial Colibrí, Chiclayo"
             data-area="67.5 m²" data-beds="2 habitaciones" data-baths="2 baños" data-status="Moderno"
@@ -677,10 +944,10 @@
           </article>
 
 
-          <!-- Propiedad 5: Casa Comercial en Calle Sauces -->
-          <article class="property-card" tabindex="0" role="button"
-            aria-label="Ver detalles de Casa Comercial en Calle Sauces 632" data-zone="santa-victoria" data-type="casa"
-            data-id="prop-007" data-title="Casa Comercial en Calle Sauces 632" data-price="USD $240,000"
+          <!-- Propiedad 5: Casa Comercial en Calle Sauces — prop-005 -->
+          <article id="prop-005" class="property-card" tabindex="0" role="button"
+            aria-label="Ver detalles de Casa Comercial en Calle Sauces" data-zone="santa-victoria" data-type="casa"
+            data-id="prop-005" data-title="Casa Comercial en Calle Sauces" data-price="USD $240,000"
             data-location="Calle Sauces 632, Urb. Santa Victoria, Chiclayo" data-area="184 m²"
             data-beds="1 piso + aires" data-baths="Comercial" data-status="Comercial"
             data-finishes="1 piso + aires;Zona muy comercial;A 20m de Av. Libertad;Frente a calle Álamos;Excelente ubicación"
@@ -732,11 +999,11 @@
             </div>
           </article>
 
-          <!-- Propiedad 6: Primer Piso en Esquina - Villas del Norte -->
-          <article class="property-card" tabindex="0" role="button"
-            aria-label="Ver detalles de Departamento Primer Piso en Esquina en Villas del Norte"
-            data-zone="villas-norte" data-type="departamento" data-id="prop-004"
-            data-title="Departamento Primer Piso en Esquina (Vivienda o Comercio)" data-price="USD $112,000"
+          <!-- Propiedad 6: Departamento 1er Piso en Esquina — prop-006 -->
+          <article id="prop-006" class="property-card" tabindex="0" role="button"
+            aria-label="Ver detalles de Departamento 1er Piso en Esquina en Villas del Norte" data-zone="villas-norte"
+            data-type="departamento" data-id="prop-006" data-title="Departamento 1er Piso en Esquina"
+            data-price="USD $112,000"
             data-location="Urb. Villas del Norte, Mz. B Lote 29 (A 1 cdra. Av. Colectora), Chiclayo" data-area="144 m²"
             data-beds="3 habitaciones c/baño" data-baths="3 baños" data-status="Oportunidad"
             data-finishes="Todo el 1er piso;Ubicación en esquina;3 accesos a puerta calle;Ideal negocio o vivienda;A 1 cdra. Av. Colectora e Iglesia"
@@ -897,8 +1164,8 @@
                 </svg>
                 <span>Ver Imágenes</span>
               </button>
-              <a href="https://wa.me/51987723930?text=Hola%20RedAmen%20Inmuebles,%20deseo%20cotizar%20el%20proyecto%20Vivienda%20Y-41%20en%20Los%20Nogales."
-                target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <a href="https://wa.me/51987723930?text=Hola%20RedAmen%20Inmuebles%2C%20deseo%20informaci%C3%B3n%20y%20agendar%20visita%20para%20Casa%20Nueva%20mejor%20que%20de%20segunda%20en%20Urb.%20Los%20Nogales%20(C%C3%B3digo%3A%20prop-007)."
+                target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="wa-prop-007">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path
                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -1007,8 +1274,8 @@
                 </svg>
                 <span>Ver imágenes</span>
               </button>
-              <a href="https://wa.me/51987723930?text=Hola%20RedAmen%20Inmuebles,%20deseo%20cotizar%20el%20proyecto%20Vivienda%20en%20Los%20Nogales."
-                target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+              <a href="https://wa.me/51987723930?text=Hola%20RedAmen%20Inmuebles%2C%20deseo%20informaci%C3%B3n%20y%20agendar%20visita%20para%20Casa%20Moderna%20con%20Piscina%20en%20Urb.%20Los%20Nogales%2C%20Pimentel%20(C%C3%B3digo%3A%20prop-008)."
+                target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="wa-prop-008">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path
                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
@@ -1190,9 +1457,9 @@
             </div>
 
             <!-- Botón WhatsApp -->
-            <a href="https://wa.me/51987723930?text=Hola%20RedAmen%20Inmuebles,%20deseo%20informaci%C3%B3n%20y%20agendar%20visita%20para%20el%20Terreno%20de%201,010.30m2%20en%20Villas%20del%20Sol%20(Chiclayo)."
+            <a href="https://wa.me/51987723930?text=Hola%20RedAmen%20Inmuebles%2C%20deseo%20informaci%C3%B3n%20y%20agendar%20visita%20para%20Terreno%20en%20Esquina%20%E2%80%94%20Hab.%20Urbana%20Las%20Villas%20del%20Sol%20en%20Chiclayo%20(C%C3%B3digo%3A%20prop-009)."
               target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full btn-terreno-wa"
-              id="btn-terreno-wa">
+              id="wa-prop-009">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                 <path
                   d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
@@ -1212,28 +1479,33 @@
           <div class="terreno-media-col">
             <!-- Tabs selector -->
             <div class="terreno-img-tabs" role="tablist" aria-label="Vistas del terreno">
-              <button class="terreno-img-tab terreno-img-tab--active" role="tab" aria-selected="true" data-terreno-tab="foto1">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
+              <button class="terreno-img-tab terreno-img-tab--active" role="tab" aria-selected="true"
+                data-terreno-tab="foto1">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
                 </svg>
                 Vista Frontal
               </button>
 
               <button class="terreno-img-tab" role="tab" aria-selected="false" data-terreno-tab="foto2">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
-                  <circle cx="8.5" cy="8.5" r="1.5"/>
-                  <polyline points="21 15 16 10 5 21"/>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                  <circle cx="8.5" cy="8.5" r="1.5" />
+                  <polyline points="21 15 16 10 5 21" />
                 </svg>
                 Vista Interna
               </button>
 
               <button class="terreno-img-tab" role="tab" aria-selected="false" data-terreno-tab="sat">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
                   <circle cx="12" cy="12" r="3" />
-                  <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                  <path
+                    d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
                 </svg>
                 Vista Satelital
               </button>
@@ -1242,11 +1514,13 @@
             <!-- Panel Foto 1 -->
             <div class="terreno-img-panel terreno-img-panel--active" data-terreno-panel="foto1" role="tabpanel">
               <div class="terreno-img-frame">
-                <img src="assets/terreno2/1.jpg" alt="Vista del terreno cercado en Monsefú" class="terreno-img" loading="lazy">
+                <img src="assets/terreno2/1.jpg" alt="Vista del terreno cercado en Monsefú" class="terreno-img"
+                  loading="lazy">
                 <div class="terreno-img-label">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <circle cx="12" cy="12" r="3"/>
-                    <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                    <circle cx="12" cy="12" r="3" />
+                    <path
+                      d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
                   </svg>
                   Terreno Cercado – Amplio Frente
                 </div>
@@ -1256,11 +1530,13 @@
             <!-- Panel Foto 2 -->
             <div class="terreno-img-panel" data-terreno-panel="foto2" role="tabpanel" hidden>
               <div class="terreno-img-frame">
-                <img src="assets/terreno2/2.jpg" alt="Vista interna del lote y linderos" class="terreno-img" loading="lazy">
+                <img src="assets/terreno2/2.jpg" alt="Vista interna del lote y linderos" class="terreno-img"
+                  loading="lazy">
                 <div class="terreno-img-label">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-                    <rect x="3" y="3" width="18" height="18" rx="2"/>
-                    <path d="M9 3v18M3 9h18"/>
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    aria-hidden="true">
+                    <rect x="3" y="3" width="18" height="18" rx="2" />
+                    <path d="M9 3v18M3 9h18" />
                   </svg>
                   Vista Interna – Listo para Construir
                 </div>
@@ -1274,7 +1550,8 @@
                 <div class="terreno-img-label">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <circle cx="12" cy="12" r="3" />
-                    <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                    <path
+                      d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
                   </svg>
                   Vista Satelital
                 </div>
@@ -1300,7 +1577,8 @@
             <h3 class="terreno-title">Lote Amplio con Gran Frente – Monsefú, Chiclayo</h3>
 
             <p class="terreno-location">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
@@ -1348,9 +1626,12 @@
               <span class="finish-chip">Memoria y plano listos</span>
             </div>
 
-            <a href="https://wa.me/51987723930?text=Hola%20RedAmen%20Inmuebles,%20deseo%20informaci%C3%B3n%20y%20agendar%20visita%20para%20el%20terreno%20de%20627m2%20en%20Monsef%C3%BA" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full btn-terreno-wa">
+            <a href="https://wa.me/51987723930?text=Hola%20RedAmen%20Inmuebles%2C%20deseo%20informaci%C3%B3n%20y%20agendar%20visita%20para%20Lote%20Amplio%20con%20Gran%20Frente%20%E2%80%94%20Monsefú%20en%20Monsefú%20(C%C3%B3digo%3A%20prop-010)."
+              target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full btn-terreno-wa"
+              id="wa-prop-010">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
               </svg>
               <span>Solicitar Información y Agendar Visita</span>
             </a>
@@ -1367,10 +1648,13 @@
           <div class="terreno-media-col">
             <!-- Tabs selector -->
             <div class="terreno-img-tabs" role="tablist" aria-label="Vistas del terreno">
-              <button class="terreno-img-tab terreno-img-tab--active" role="tab" aria-selected="true" data-terreno-tab="sat">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <button class="terreno-img-tab terreno-img-tab--active" role="tab" aria-selected="true"
+                data-terreno-tab="sat">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
                   <circle cx="12" cy="12" r="3" />
-                  <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                  <path
+                    d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
                 </svg>
                 Vista Satelital
               </button>
@@ -1379,11 +1663,13 @@
             <!-- Panel Vista Satelital -->
             <div class="terreno-img-panel terreno-img-panel--active" data-terreno-panel="sat" role="tabpanel">
               <div class="terreno-img-frame">
-                <img src="assets/terreno3/1.jpg" alt="Vista satelital del macrolote en Santa Rosa - Pimentel" class="terreno-img" loading="lazy">
+                <img src="assets/terreno3/1.jpg" alt="Vista satelital del macrolote en Santa Rosa - Pimentel"
+                  class="terreno-img" loading="lazy">
                 <div class="terreno-img-label">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <circle cx="12" cy="12" r="3" />
-                    <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
+                    <path
+                      d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
                   </svg>
                   Vista Satelital – Franja Costera
                 </div>
@@ -1409,7 +1695,8 @@
             <h3 class="terreno-title">Macrolote Costero de 0.5 ha – Pimentel / Santa Rosa</h3>
 
             <p class="terreno-location">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                aria-hidden="true">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
                 <circle cx="12" cy="10" r="3" />
               </svg>
@@ -1460,9 +1747,12 @@
             </div>
 
             <!-- Botón WhatsApp -->
-            <a href="https://wa.me/51987723930?text=Hola%20RedAmen%20Inmuebles,%20deseo%20informaci%C3%B3n%20y%20agendar%20visita%20para%20el%20terreno%20de%200.5%20ha%20en%20Santa%20Rosa%20-%20Pimentel" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full btn-terreno-wa">
+            <a href="https://wa.me/51987723930?text=Hola%20RedAmen%20Inmuebles%2C%20deseo%20informaci%C3%B3n%20y%20agendar%20visita%20para%20Macrolote%20Costero%20de%200.5%20ha%20%E2%80%94%20Pimentel%20%2F%20Santa%20Rosa%20en%20Pimentel%20(C%C3%B3digo%3A%20prop-011)."
+              target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-full btn-terreno-wa"
+              id="wa-prop-011">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
               </svg>
               <span>Solicitar Información y Agendar Visita</span>
             </a>
@@ -1717,8 +2007,7 @@
               <!-- Render 6 -->
               <div class="y41-render-item" data-render-index="5" data-render-src="assets/Y-41/fachada.jpg"
                 data-render-title="Fachada">
-                <img src="assets/Y-41/fachada.jpg" alt="Fachada" class="y41-render-img"
-                  loading="lazy">
+                <img src="assets/Y-41/fachada.jpg" alt="Fachada" class="y41-render-img" loading="lazy">
                 <span class="y41-render-zoom-icon">🔍</span>
                 <div class="y41-render-overlay">
                   <span class="y41-render-caption">6. Fachada</span>
