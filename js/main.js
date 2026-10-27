@@ -168,9 +168,9 @@ document.addEventListener('DOMContentLoaded', () => {
     carouselImages = images;
     carouselIndex = 0;
 
-    // Limpiar
-    if (carouselTrack) carouselTrack.innerHTML = '';
-    if (thumbsWrap) thumbsWrap.innerHTML = '';
+    // Limpiar de forma segura mediante textContent
+    if (carouselTrack) carouselTrack.textContent = '';
+    if (thumbsWrap) thumbsWrap.textContent = '';
 
     images.forEach((src, i) => {
       // Slide principal
@@ -274,16 +274,16 @@ document.addEventListener('DOMContentLoaded', () => {
   function openModal(card) {
     if (!modal) return;
 
-    const id = card.getAttribute('data-id') || '';
-    const title = card.getAttribute('data-title') || '';
-    const price = card.getAttribute('data-price') || '';
-    const location = card.getAttribute('data-location') || '';
-    const area = card.getAttribute('data-area') || '';
-    const beds = card.getAttribute('data-beds') || '';
-    const baths = card.getAttribute('data-baths') || '';
-    const status = card.getAttribute('data-status') || '';
-    const finishes = card.getAttribute('data-finishes') || '';
-    const gallery = card.getAttribute('data-gallery') || '';
+    const id = card.dataset.id || card.getAttribute('data-id') || '';
+    const title = card.dataset.title || card.getAttribute('data-title') || '';
+    const price = card.dataset.price || card.getAttribute('data-price') || '';
+    const location = card.dataset.location || card.getAttribute('data-location') || '';
+    const area = card.dataset.area || card.getAttribute('data-area') || '';
+    const beds = card.dataset.beds || card.getAttribute('data-beds') || '';
+    const baths = card.dataset.baths || card.getAttribute('data-baths') || '';
+    const status = card.dataset.status || card.getAttribute('data-status') || '';
+    const finishes = card.dataset.finishes || card.getAttribute('data-finishes') || '';
+    const gallery = card.dataset.gallery || card.getAttribute('data-gallery') || '';
 
     // Poblar texto
     if (elStatusTag) elStatusTag.textContent = status;
@@ -293,8 +293,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (elPrice) elPrice.textContent = price;
     if (elArea) elArea.textContent = area;
 
-    // Galería vs placeholder
-    const images = gallery ? gallery.split('|').filter(Boolean) : [];
+    // Galería vs placeholder (soporta delimitadores '|' y ',')
+    const images = gallery ? gallery.split(/[|,]/).map(s => s.trim()).filter(Boolean) : [];
 
     if (carousel && images.length > 0) {
       carousel.removeAttribute('hidden');

@@ -761,6 +761,14 @@ h3 {
   border-color: rgba(124, 58, 237, 0.22);
 }
 
+/* Precio Rebajado — Amber/Crimson pill */
+.tag-status--precio-rebajado,
+.property-card[data-status="Precio Rebajado"] .tag-status {
+  background: rgba(220, 38, 38, 0.10);
+  color: #b91c1c;
+  border-color: rgba(220, 38, 38, 0.28);
+}
+
 /* ── WhatsApp botón rápido en tarjeta ── */
 .btn-card-wa {
   position: absolute;
