@@ -73,7 +73,7 @@
 
   <!-- ============================================================
        DATOS ESTRUCTURADOS SCHEMA.ORG — JSON-LD EXHAUSTIVO
-       RealEstateAgent + 13 Propiedades (ItemList) + Servicio
+       RealEstateAgent + 14 Propiedades (ItemList) + Servicio
        ============================================================ -->
   <script type="application/ld+json">
   {
@@ -151,8 +151,8 @@
         "@type": "ItemList",
         "@id": "https://redameninmuebles.com/#catalogo",
         "name": "Catálogo Oficial de Propiedades — RedAmen Inmuebles",
-        "description": "13 propiedades en venta en Chiclayo, Pimentel y Monsefú: departamentos, casas, oficinas, preventas y terrenos.",
-        "numberOfItems": 13,
+        "description": "14 propiedades en venta en Chiclayo, Pimentel y Monsefú: departamentos, casas, oficinas, preventas y terrenos.",
+        "numberOfItems": 14,
         "itemListElement": [
 
           {
@@ -596,6 +596,49 @@
               }
             }
           }
+          ,
+          {
+            "@type": "ListItem",
+            "position": 14,
+            "item": {
+              "@type": "Apartment",
+              "@id": "https://redameninmuebles.com/#prop-014",
+              "name": "Dúplex con Terraza Social y Cochera Independiente en Los Geranios",
+              "description": "Departamento Dúplex en venta en 5to y 6to piso ubicado en Ref.: Cruce Calle Pacasmayo con Los Geranios, Chiclayo. Área de 180 m², incluye cochera independiente con portón a la calle, amplia sala-comedor, cocina con barra americana, 3 dormitorios con clóset (principal con baño propio), 2.5 baños y escalera interior hacia terraza social con parrilla y jacuzzi.",
+              "image": [
+                "https://redameninmuebles.com/assets/geranios/3.jpg",
+                "https://redameninmuebles.com/assets/geranios/4.jpg",
+                "https://redameninmuebles.com/assets/geranios/5.jpg",
+                "https://redameninmuebles.com/assets/geranios/6.jpg",
+                "https://redameninmuebles.com/assets/geranios/2.jpg",
+                "https://redameninmuebles.com/assets/geranios/1.jpg"
+              ],
+              "numberOfRooms": 3,
+              "numberOfBathroomsTotal": 3,
+              "floorSize": {
+                "@type": "QuantitativeValue",
+                "value": 180,
+                "unitCode": "MTK"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Ref.: Cruce Calle Pacasmayo con Los Geranios, Chiclayo",
+                "addressLocality": "Chiclayo",
+                "addressRegion": "Lambayeque",
+                "addressCountry": "PE"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "85000",
+                "priceCurrency": "USD",
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "RealEstateAgent",
+                  "@id": "https://redameninmuebles.com/#agent"
+                }
+              }
+            }
+          }
         ]
       }
 
@@ -701,7 +744,7 @@
                 <p class="zhpanel-desc">Urb. Santa Victoria. Zona residencial y corporativa de
                   alta seguridad, cerca de los mejores restaurantes, clínicas y colegios de Chiclayo.</p>
                 <div class="zhpanel-stats">
-                  <div class="zhstat"><span class="zhstat-l">Disponibles</span><span class="zhstat-v">3
+                  <div class="zhstat"><span class="zhstat-l">Disponibles</span><span class="zhstat-v">4
                       propiedades</span>
                   </div>
                   <div class="zhstat"><span class="zhstat-l">Tipo dominante</span><span
@@ -710,8 +753,8 @@
                       &amp; residencial</span></div>
                 </div>
                 <button class="btn btn-primary btn-zone-filter" data-zone="santa-victoria"
-                  aria-label="Ver las 3 propiedades disponibles en Santa Victoria">
-                  Ver las 3 propiedades →
+                  aria-label="Ver las 4 propiedades disponibles en Santa Victoria">
+                  Ver las 4 propiedades →
                 </button>
               </div>
             </div>
@@ -824,7 +867,7 @@
         <!-- Barra de Chips Reactivos -->
         <div class="chip-bar" role="group" aria-label="Filtros rápidos de propiedades" id="chip-bar">
           <button class="chip chip--active" data-filter="todos" data-filter-type="all" aria-pressed="true">
-            Todos <span class="chip-badge" id="chip-all-count">8</span>
+            Todos <span class="chip-badge" id="chip-all-count">9</span>
           </button>
           <div class="chip-sep" aria-hidden="true"></div>
           <button class="chip" data-filter="santa-victoria" data-filter-type="zone" aria-pressed="false">Santa
@@ -839,7 +882,7 @@
           <button class="chip" data-filter="el-santuario" data-filter-type="zone" aria-pressed="false">El Santuario
           </button>
         </div>
-        <p class="chip-result-label" id="chip-result-label" aria-live="polite">Mostrando 8 propiedades</p>
+        <p class="chip-result-label" id="chip-result-label" aria-live="polite">Mostrando 9 propiedades</p>
 
         <!-- Grid de Propiedades -->
         <div class="cards-grid" id="properties-container">
@@ -1325,6 +1368,71 @@
               </div>
             </div>
           </article>
+
+          <!-- Propiedad 14: Dúplex con Terraza Social y Cochera Independiente — prop-014 -->
+          <article id="prop-014" class="property-card" tabindex="0" role="button"
+            aria-label="Ver detalles de Dúplex con Terraza Social y Cochera Independiente" data-zone="santa-victoria"
+            data-type="departamento" data-id="prop-009" data-title="Dúplex con Terraza Social y Cochera Independiente"
+            data-price="USD $85,000"
+            data-location="Ref.: Cruce Calle Pacasmayo con Los Geranios, Chiclayo"
+            data-area="180 m²" data-beds="3 Hab" data-baths="2.5 Baños"
+            data-status="Oportunidad"
+            data-specs="180 m² · 3 Hab · 2.5 Baños"
+            data-image="assets/geranios/3.jpg"
+            data-finishes="Incluye Cochera Independiente con portón directo a la calle;Dúplex en 5to y 6to piso con 180 m² y excelente distribución;Amplia sala-comedor iluminada con pisos de porcelanato y ½ baño de visita;Cocina moderna con barra americana, luminarias colgantes y reposteros;3 dormitorios con clóset de piso a techo (Principal con baño propio incluido);Escalera interior que conecta a terraza social en 6to piso y parte de la azotea;Terraza equipada con salón lounge acristalado, zona de parrilla BBQ y jacuzzi panorámico;Ubicación estratégica en Ref. cruce de Calle Pacasmayo con Los Geranios"
+            data-gallery="assets/geranios/3.jpg,assets/geranios/4.jpg,assets/geranios/5.jpg,assets/geranios/6.jpg,assets/geranios/2.jpg,assets/geranios/1.jpg">
+
+            <div class="card-image-wrapper card-img--photo" style="background-image: url('assets/geranios/3.jpg')">
+              <img src="assets/geranios/3.jpg"
+                alt="Duplex en venta en Los Geranios Chiclayo con terraza social parrilla y cochera independiente"
+                class="card-header-img" loading="lazy">
+              <div class="card-photo-count" aria-hidden="true">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                </svg>
+                6 fotos
+              </div>
+              <span class="tag-status tag-status--oportunidad">Oportunidad</span>
+              <a href="https://wa.me/51987723930?text=Hola%20RedAmen%20Inmuebles,%20deseo%20informaci%C3%B3n%20y%20agendar%20visita%20para%20el%20D%C3%BAplex%20en%20Los%20Geranios%20de%20180%20m%C2%B2%20con%20Cochera%20Independiente%20(USD%20%2485,000%20-%20C%C3%B3digo:%20prop-009)."
+                target="_blank" rel="noopener noreferrer" class="btn-card-wa"
+                aria-label="Consultar Dúplex con Terraza Social y Cochera Independiente por WhatsApp">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                Consultar
+              </a>
+            </div>
+
+            <div class="card-body">
+              <div class="card-panel card-panel--active" data-card-panel="general">
+                <span class="price">USD $85,000</span>
+                <h3>Dúplex con Terraza Social y Cochera Independiente</h3>
+                <p class="location">Ref.: Cruce Calle Pacasmayo con Los Geranios, Chiclayo</p>
+                <div class="specs">
+                  <span class="spec-item"><span class="spec-icon" aria-hidden="true">📐</span>180 m²</span>
+                  <span class="spec-sep" aria-hidden="true">|</span>
+                  <span class="spec-item"><span class="spec-icon" aria-hidden="true">🛏️</span>3 Hab</span>
+                  <span class="spec-sep" aria-hidden="true">|</span>
+                  <span class="spec-item"><span class="spec-icon" aria-hidden="true">🚿</span>2.5 Baños</span>
+                </div>
+                <div class="card-features">
+                  <span class="card-features-label">Características</span>
+                  <div class="card-finish-chips">
+                    <span class="finish-chip">Cochera Independiente</span>
+                    <span class="finish-chip">5to y 6to Piso</span>
+                    <span class="finish-chip">Terraza + Jacuzzi</span>
+                  </div>
+                </div>
+              </div>
+              <div class="card-cta-footer">
+                <button class="btn-link btn-quickview"
+                  aria-label="Ver detalles de Dúplex con Terraza Social y Cochera Independiente">Ver detalles →</button>
+              </div>
+            </div>
+          </article>
+
         </div><!-- /cards-grid -->
       </div><!-- /container -->
     </section>

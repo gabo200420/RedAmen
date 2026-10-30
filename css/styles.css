@@ -748,6 +748,7 @@ h3 {
 }
 
 /* Oportunidad — Amber pill */
+.tag-status--oportunidad,
 .property-card[data-status="Oportunidad"] .tag-status {
   background: rgba(180, 83, 9, 0.09);
   color: #92400e;
