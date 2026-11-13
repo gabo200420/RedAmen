@@ -92,6 +92,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  padding-top: 72px; /* Compensar navbar fija */
 }
 
 /* Imágenes responsivas — evita colapso en pantallas pequeñas (Safari iOS) */
@@ -165,9 +166,12 @@ h3 {
    ============================================= */
 
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 9999;
   background-color: rgba(245, 240, 232, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);

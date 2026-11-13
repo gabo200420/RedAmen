@@ -73,7 +73,7 @@
 
   <!-- ============================================================
        DATOS ESTRUCTURADOS SCHEMA.ORG — JSON-LD EXHAUSTIVO
-       RealEstateAgent + 14 Propiedades (ItemList) + Servicio
+       RealEstateAgent + 15 Propiedades (ItemList) + Servicio
        ============================================================ -->
   <script type="application/ld+json">
   {
@@ -151,8 +151,8 @@
         "@type": "ItemList",
         "@id": "https://redameninmuebles.com/#catalogo",
         "name": "Catálogo Oficial de Propiedades — RedAmen Inmuebles",
-        "description": "14 propiedades en venta en Chiclayo, Pimentel y Monsefú: departamentos, casas, oficinas, preventas y terrenos.",
-        "numberOfItems": 14,
+        "description": "15 propiedades en venta en Chiclayo, Pimentel y Monsefú: departamentos, casas, oficinas, preventas y terrenos.",
+        "numberOfItems": 15,
         "itemListElement": [
 
           {
@@ -639,6 +639,47 @@
               }
             }
           }
+
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "item": {
+              "@type": "SingleFamilyResidence",
+              "@id": "https://redameninmuebles.com/#prop-palmas",
+              "name": "Casa de Estreno en Cieza de León, Monterrico (Dos Frentes: Avenida y Parque)",
+              "description": "Casa de estreno con dos frentes (acceso por avenida y salida directa a parque) en Cieza de León, Monterrico, Chiclayo. 120.5 m² de área, 105 m² techados, 6.5 m de frente, cochera, sala-comedor, cocina con barra, 3 habitaciones, 3 baños y terraza social con zona de parrilla. Separa con 20% de inicial y saldo contra entrega.",
+              "image": [
+                "https://redameninmuebles.com/assets/palmas/fachada.jpg",
+                "https://redameninmuebles.com/assets/palmas/parque.jpg",
+                "https://redameninmuebles.com/assets/palmas/1.jpg",
+                "https://redameninmuebles.com/assets/palmas/3.jpg"
+              ],
+              "numberOfRooms": 3,
+              "numberOfBathroomsTotal": 3,
+              "floorSize": {
+                "@type": "QuantitativeValue",
+                "value": 120.5,
+                "unitCode": "MTK"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Cieza de León, Urb. Monterrico",
+                "addressLocality": "Chiclayo",
+                "addressRegion": "Lambayeque",
+                "addressCountry": "PE"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "419000",
+                "priceCurrency": "PEN",
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "RealEstateAgent",
+                  "@id": "https://redameninmuebles.com/#agent"
+                }
+              }
+            }
+          }
         ]
       }
 
@@ -663,7 +704,8 @@
       </button>
       <nav class="nav-links" id="nav-links-menu" aria-label="Menú principal">
         <a href="#destacados" class="nav-link-item">Propiedades</a>
-        <a href="#proyectos" class="nav-link-item" style="color: var(--accent-deep); font-weight: 700;">Proyectos</a>
+        <a href="#proyectos" class="nav-link-item" style="color: var(--accent-deep); font-weight: 700;">Casas de
+          Estreno</a>
         <a href="#terrenos" class="nav-link-item">Terrenos</a>
         <a href="#zonas" class="nav-link-item">Zonas</a>
         <a href="#sobre-nosotros" class="nav-link-item">Sobre nosotros</a>
@@ -1373,12 +1415,9 @@
           <article id="prop-014" class="property-card" tabindex="0" role="button"
             aria-label="Ver detalles de Dúplex con Terraza Social y Cochera Independiente" data-zone="santa-victoria"
             data-type="departamento" data-id="prop-009" data-title="Dúplex con Terraza Social y Cochera Independiente"
-            data-price="USD $85,000"
-            data-location="Ref.: Cruce Calle Pacasmayo con Los Geranios, Chiclayo"
-            data-area="180 m²" data-beds="3 Hab" data-baths="2.5 Baños"
-            data-status="Oportunidad"
-            data-specs="180 m² · 3 Hab · 2.5 Baños"
-            data-image="assets/geranios/3.jpg"
+            data-price="USD $85,000" data-location="Ref.: Cruce Calle Pacasmayo con Los Geranios, Chiclayo"
+            data-area="180 m²" data-beds="3 Hab" data-baths="2.5 Baños" data-status="Oportunidad"
+            data-specs="180 m² · 3 Hab · 2.5 Baños" data-image="assets/geranios/3.jpg"
             data-finishes="Incluye Cochera Independiente con portón directo a la calle;Dúplex en 5to y 6to piso con 180 m² y excelente distribución;Amplia sala-comedor iluminada con pisos de porcelanato y ½ baño de visita;Cocina moderna con barra americana, luminarias colgantes y reposteros;3 dormitorios con clóset de piso a techo (Principal con baño propio incluido);Escalera interior que conecta a terraza social en 6to piso y parte de la azotea;Terraza equipada con salón lounge acristalado, zona de parrilla BBQ y jacuzzi panorámico;Ubicación estratégica en Ref. cruce de Calle Pacasmayo con Los Geranios"
             data-gallery="assets/geranios/3.jpg,assets/geranios/4.jpg,assets/geranios/5.jpg,assets/geranios/6.jpg,assets/geranios/2.jpg,assets/geranios/1.jpg">
 
@@ -1438,21 +1477,21 @@
     </section>
 
     <!-- =============================================
-         SECCIÓN: PROYECTOS & PREVENTAS (PROYECTO REAL Y-41)
+         SECCIÓN: CASAS DE ESTRENO
          ============================================= -->
     <section id="proyectos" class="section-padding proyectos-section">
       <div class="container">
 
         <div class="section-header">
-          <span class="sub-heading">Casas de estreno en preventa con diseños personalizados</span>
-          <h2>Casas en Preventa</h2>
+          <span class="sub-heading">Casas de estreno con diseños personalizados</span>
+          <h2>Casas de Estreno</h2>
           <p class="section-desc">
             Diseños arquitectónicos contemporáneos con distribución optimizada, salas a doble altura y acabados de
             primera.
           </p>
         </div>
 
-        <!-- Tarjeta Principal del Proyecto (Vivienda Y-41) -->
+        <!-- Tarjeta: Vivienda Y-41 (Estreno Exclusivo) -->
         <article class="y41-featured-card">
 
           <div class="y41-card-media-wrapper">
@@ -1661,6 +1700,128 @@
                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
                 </svg>
                 <span>Cotizar Preventa por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- ======================================================
+             TERCERA TARJETA: Casa en Cieza de León, Monterrico
+             ====================================================== -->
+        <article class="y41-featured-card preventa-card-2" id="prop-palmas"
+          aria-label="Casa en Cieza de León, Monterrico">
+
+          <!-- Media -->
+          <div class="y41-card-media-wrapper">
+            <span class="y41-badge-preventa">CASA DE ESTRENO · DOS FRENTES</span>
+            <img src="assets/palmas/fachada.jpg"
+              alt="Casa de estreno en Cieza de León Monterrico Chiclayo con doble frente a avenida y parque"
+              class="y41-cover-img" loading="lazy">
+            <div class="y41-photo-count-badge" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+              </svg>
+              8 imágenes
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="y41-card-info">
+
+            <span class="y41-arch-firm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3" />
+              </svg>
+              RedAmen Inmuebles — Estreno Exclusivo
+            </span>
+
+            <h3 class="y41-card-title">Casa en Cieza de León, Monterrico (Doble Frente: Avenida y Parque)</h3>
+
+            <div class="preventa2-price-row">
+              <span class="preventa2-price">S/ 419,000</span>
+              <span class="preventa2-price-note">Casa de Estreno</span>
+            </div>
+
+            <div class="y41-card-location">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Cieza de León, Urb. Monterrico — Chiclayo, Lambayeque
+            </div>
+
+            <div class="y41-specs-grid">
+              <div class="y41-spec-item">
+                <span class="y41-spec-label">Área Terreno</span>
+                <span class="y41-spec-val">120.5 m²</span>
+              </div>
+              <div class="y41-spec-item">
+                <span class="y41-spec-label">Área Techada</span>
+                <span class="y41-spec-val">105 m²</span>
+              </div>
+              <div class="y41-spec-item">
+                <span class="y41-spec-label">Frente</span>
+                <span class="y41-spec-val">6.5 m (Doble)</span>
+              </div>
+              <div class="y41-spec-item">
+                <span class="y41-spec-label">Habitaciones</span>
+                <span class="y41-spec-val">3 con clóset</span>
+              </div>
+              <div class="y41-spec-item">
+                <span class="y41-spec-label">Baños</span>
+                <span class="y41-spec-val">3 baños</span>
+              </div>
+              <div class="y41-spec-item">
+                <span class="y41-spec-label">Cochera</span>
+                <span class="y41-spec-val">Privada frontal</span>
+              </div>
+            </div>
+
+            <!-- Callout Financiamiento -->
+            <div class="preventa2-callout" role="note">
+              <div class="preventa2-callout-header">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M12 22s8-4.5 8-11.8A8 8 0 0 0 12 2a8 8 0 0 0-8 8.2c0 7.3 8 11.8 8 11.8z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Facilidad de Pago</span>
+              </div>
+              <p class="preventa2-callout-text">
+                <strong>Separa con el 20% de inicial</strong> y paga el saldo contra entrega (financiamiento bancario o
+                recursos propios).
+              </p>
+            </div>
+
+            <div class="y41-finishes-chips">
+              <span class="y41-finish-chip">🚗 Cochera privada frontal</span>
+              <span class="y41-finish-chip">🏠 Doble frente: Av. y Parque</span>
+              <span class="y41-finish-chip">🌳 Salida directa a parque</span>
+              <span class="y41-finish-chip">🍖 Terraza social con parrilla BBQ</span>
+              <span class="y41-finish-chip">🛏️ 3 dormitorios con clóset</span>
+              <span class="y41-finish-chip">🏗️ Estreno exclusivo</span>
+            </div>
+
+            <div class="y41-card-actions">
+              <button type="button" class="btn btn-primary btn-view-renders" id="btn-trigger-palmas-modal"
+                data-title="Casa en Cieza de León, Monterrico"
+                data-gallery="assets/palmas/fachada.jpg|assets/palmas/parque.jpg|assets/palmas/1.jpg|assets/palmas/2.jpg|assets/palmas/3.jpg|assets/palmas/4.jpg|assets/palmas/5.jpg|assets/palmas/6.jpg">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                <span>Ver 8 fotos y planos 3D</span>
+              </button>
+              <a href="https://wa.me/51987723930?text=Hola%20RedAmen,%20deseo%20informaci%C3%B3n%20de%20la%20Casa%20de%20Estreno%20en%20Cieza%20de%20Le%C3%B3n,%20Monterrico%20(S/%20419,000)"
+                target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="wa-prop-palmas">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                <span>Cotizar por WhatsApp</span>
               </a>
             </div>
           </div>
