@@ -579,6 +579,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxCaption = document.getElementById('y41-lightbox-caption');
   const lightboxCounter = document.getElementById('y41-lightbox-counter');
   const lightboxCloseBtn = document.getElementById('btn-close-y41-lightbox');
+  const lightboxBackBtn = document.getElementById('btn-back-y41-lightbox');
   const lightboxPrevBtn = document.getElementById('btn-prev-y41-lightbox');
   const lightboxNextBtn = document.getElementById('btn-next-y41-lightbox');
 
@@ -613,7 +614,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!lightboxBackdrop) return;
     lightboxBackdrop.classList.remove('active');
     lightboxBackdrop.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+    if (!y41Modal || !y41Modal.classList.contains('active')) {
+      document.body.style.overflow = '';
+    }
   }
 
   // Delegación de clic en items de render (grid Y-41 dentro del modal)
@@ -658,6 +661,7 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   if (lightboxCloseBtn) lightboxCloseBtn.addEventListener('click', closeLightbox);
+  if (lightboxBackBtn) lightboxBackBtn.addEventListener('click', closeLightbox);
   if (lightboxPrevBtn) lightboxPrevBtn.addEventListener('click', () => showLightboxRender(currentRenderIndex - 1));
   if (lightboxNextBtn) lightboxNextBtn.addEventListener('click', () => showLightboxRender(currentRenderIndex + 1));
 
