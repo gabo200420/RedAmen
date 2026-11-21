@@ -73,7 +73,7 @@
 
   <!-- ============================================================
        DATOS ESTRUCTURADOS SCHEMA.ORG — JSON-LD EXHAUSTIVO
-       RealEstateAgent + 15 Propiedades (ItemList) + Servicio
+       RealEstateAgent + 16 Propiedades (ItemList) + Servicio
        ============================================================ -->
   <script type="application/ld+json">
   {
@@ -151,8 +151,8 @@
         "@type": "ItemList",
         "@id": "https://redameninmuebles.com/#catalogo",
         "name": "Catálogo Oficial de Propiedades — RedAmen Inmuebles",
-        "description": "15 propiedades en venta en Chiclayo, Pimentel y Monsefú: departamentos, casas, oficinas, preventas y terrenos.",
-        "numberOfItems": 15,
+        "description": "16 propiedades en venta en Chiclayo, Pimentel y Monsefú: departamentos, casas, oficinas, preventas y terrenos.",
+        "numberOfItems": 16,
         "itemListElement": [
 
           {
@@ -387,7 +387,7 @@
                 "price": "180000",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/PreOrder",
-                "priceSpecification": { "@type": "PriceSpecification", "description": "Precio Preventa — 20% inicial, saldo contra entrega" },
+                "priceSpecification": { "@type": "PriceSpecification", "description": "Precio Preventa — cuota inicial y saldo contra entrega" },
                 "seller": { "@id": "https://redameninmuebles.com/#agent" }
               }
             }
@@ -419,7 +419,7 @@
                 "price": "212000",
                 "priceCurrency": "USD",
                 "availability": "https://schema.org/PreOrder",
-                "priceSpecification": { "@type": "PriceSpecification", "description": "Precio Preventa — 20% inicial, saldo contra entrega" },
+                "priceSpecification": { "@type": "PriceSpecification", "description": "Precio Preventa — cuota inicial y saldo contra entrega" },
                 "seller": { "@id": "https://redameninmuebles.com/#agent" }
               }
             }
@@ -647,7 +647,7 @@
               "@type": "SingleFamilyResidence",
               "@id": "https://redameninmuebles.com/#prop-palmas",
               "name": "Casa de Estreno en Cieza de León, Monterrico (Dos Frentes: Avenida y Parque)",
-              "description": "Casa de estreno con dos frentes (acceso por avenida y salida directa a parque) en Cieza de León, Monterrico, Chiclayo. 120.5 m² de área, 105 m² techados, 6.5 m de frente, cochera, sala-comedor, cocina con barra, 3 habitaciones, 3 baños y terraza social con zona de parrilla. Separa con 20% de inicial y saldo contra entrega.",
+              "description": "Casa de estreno con dos frentes (acceso por avenida y salida directa a parque) en Cieza de León, Monterrico, Chiclayo. 120.5 m² de área, 105 m² techados, 6.5 m de frente, cochera, sala-comedor, cocina con barra, 3 habitaciones, 3 baños y terraza social con zona de parrilla. Separa con una parte de inicial y completa el saldo contra entrega.",
               "image": [
                 "https://redameninmuebles.com/assets/palmas/fachada.jpg",
                 "https://redameninmuebles.com/assets/palmas/parque.jpg",
@@ -672,6 +672,53 @@
                 "@type": "Offer",
                 "price": "419000",
                 "priceCurrency": "PEN",
+                "availability": "https://schema.org/InStock",
+                "seller": {
+                  "@type": "RealEstateAgent",
+                  "@id": "https://redameninmuebles.com/#agent"
+                }
+              }
+            }
+          },
+
+          {
+            "@type": "ListItem",
+            "position": 16,
+            "item": {
+              "@type": "SingleFamilyResidence",
+              "@id": "https://redameninmuebles.com/#prop-015",
+              "name": "Casa de Estreno con Piscina y Doble Altura — Urb. Los Nogales",
+              "description": "Casa de estreno de 200 m² techados en Urb. Los Nogales, Chiclayo / Pimentel. 3 dormitorios más cuarto de servicio, 3 baños en dormitorios, baño de piscina, ½ baño de visita y baño de servicio. Piscina equipada y enchapada con caída de agua, luces y rincón parrillero; cocina con isla en granito y despensa; sala familiar en 2do piso a doble altura; terraza con vista a la calle; cerradura con clave, intercomunicador, luces con sensores, porcelanato, agua caliente, depósito y cochera levadiza con puerta de madera.",
+              "image": [
+                "https://redameninmuebles.com/assets/NogalesF2/fachada.webp",
+                "https://redameninmuebles.com/assets/NogalesF2/piscina.webp",
+                "https://redameninmuebles.com/assets/NogalesF2/sala.webp",
+                "https://redameninmuebles.com/assets/NogalesF2/cocina.webp",
+                "https://redameninmuebles.com/assets/NogalesF2/doble_altura.webp",
+                "https://redameninmuebles.com/assets/NogalesF2/hab1.webp",
+                "https://redameninmuebles.com/assets/NogalesF2/hab2.webp",
+                "https://redameninmuebles.com/assets/NogalesF2/bano.webp",
+                "https://redameninmuebles.com/assets/NogalesF2/terraza.webp",
+                "https://redameninmuebles.com/assets/NogalesF2/lavanderia.webp"
+              ],
+              "numberOfRooms": 3,
+              "numberOfBathroomsTotal": 6,
+              "floorSize": {
+                "@type": "QuantitativeValue",
+                "value": 200,
+                "unitCode": "MTK"
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Urb. Los Nogales",
+                "addressLocality": "Chiclayo",
+                "addressRegion": "Lambayeque",
+                "addressCountry": "PE"
+              },
+              "offers": {
+                "@type": "Offer",
+                "price": "200000",
+                "priceCurrency": "USD",
                 "availability": "https://schema.org/InStock",
                 "seller": {
                   "@type": "RealEstateAgent",
@@ -1559,7 +1606,7 @@
                 <span>Modalidad de Pago Sin Riesgo</span>
               </div>
               <p class="preventa2-callout-text">
-                <strong>Solo 20% de inicial</strong> y el saldo pago contra entrega con declaratoria de fábrica, con
+                <strong>Paga una parte de inicial</strong> y completa el saldo contra entrega con declaratoria de fábrica, con
                 crédito hipotecario según su elección. <em>Asesoramos su mejor elección financiera.</em>
               </p>
             </div>
@@ -1669,7 +1716,7 @@
                 <span>Modalidad de Pago Sin Riesgo</span>
               </div>
               <p class="preventa2-callout-text">
-                <strong>Solo 20% de inicial</strong> y el saldo pago contra entrega con declaratoria de fábrica, con
+                <strong>Paga una parte de inicial</strong> y completa el saldo contra entrega con declaratoria de fábrica, con
                 crédito hipotecario según su elección. <em>Asesoramos su mejor elección financiera.</em>
               </p>
             </div>
@@ -1790,7 +1837,7 @@
                 <span>Facilidad de Pago</span>
               </div>
               <p class="preventa2-callout-text">
-                <strong>Separa con el 20% de inicial</strong> y paga el saldo contra entrega (financiamiento bancario o
+                <strong>Separa con una parte de inicial</strong> y completa el saldo contra entrega (financiamiento bancario o
                 recursos propios).
               </p>
             </div>
@@ -1817,6 +1864,132 @@
               </button>
               <a href="https://wa.me/51987723930?text=Hola%20RedAmen,%20deseo%20informaci%C3%B3n%20de%20la%20Casa%20de%20Estreno%20en%20Cieza%20de%20Le%C3%B3n,%20Monterrico%20(S/%20419,000)"
                 target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="wa-prop-palmas">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                </svg>
+                <span>Cotizar por WhatsApp</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+
+        <!-- ======================================================
+             CUARTA TARJETA: Casa de Estreno con Piscina y Doble Altura — Urb. Los Nogales
+             ====================================================== -->
+        <article class="y41-featured-card preventa-card-2" id="prop-015"
+          aria-label="Casa de Estreno con Piscina y Doble Altura — Urb. Los Nogales"
+          data-id="prop-015"
+          data-title="Casa de Estreno con Piscina y Doble Altura — Urb. Los Nogales"
+          data-location="Urb. Los Nogales, Chiclayo / Pimentel"
+          data-price="USD $200,000"
+          data-area="200 m²"
+          data-beds="3 Dormitorios (+ cuarto de servicio)"
+          data-baths="3 baños en dormitorios + baño de piscina + ½ baño de visita + baño de servicio"
+          data-status="ESTRENO · CON PISCINA"
+          data-image="assets/NogalesF2/fachada.webp"
+          data-gallery="assets/NogalesF2/fachada.webp|assets/NogalesF2/piscina.webp|assets/NogalesF2/sala.webp|assets/NogalesF2/cocina.webp|assets/NogalesF2/doble_altura.webp|assets/NogalesF2/hab1.webp|assets/NogalesF2/hab2.webp|assets/NogalesF2/bano.webp|assets/NogalesF2/terraza.webp|assets/NogalesF2/lavanderia.webp"
+          data-finishes="Piscina equipada y enchapada con caída de agua, luces, rincón parrillero y baño propio;Cocina con amplia isla en granito, cocina empotrada, reposteros altos/bajos y despensa;Dormitorio principal con baño completo, walk-in closet, clóset adicional y terraza privada;2 dormitorios secundarios con clósets completos y baño propio con duchas en vidrio templado;Sala familiar en 2do piso a doble altura con gran iluminación y ventilación natural;Amplia sala-comedor, antesala, ½ baño de visita y terraza con vista a la calle;Seguridad y tecnología: cerradura exterior con clave, intercomunicador moderno y luces exteriores con sensores;Acabados de primera: pisos de fino porcelanato, paredes con estuco, agua caliente en toda la casa, cochera levadiza, lavandería amplia, cuarto/baño de servicio y depósito">
+
+          <!-- Media -->
+          <div class="y41-card-media-wrapper">
+            <span class="y41-badge-preventa">ESTRENO · CON PISCINA</span>
+            <img src="assets/NogalesF2/fachada.webp"
+              alt="Fachada de Casa de Estreno con Piscina y Doble Altura en Urb. Los Nogales, Chiclayo"
+              class="y41-cover-img" loading="lazy" decoding="async">
+            <div class="y41-photo-count-badge" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+              </svg>
+              10 fotos
+            </div>
+          </div>
+
+          <!-- Info -->
+          <div class="y41-card-info">
+
+            <span class="y41-arch-firm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M3 21h18M5 21V7l8-4v18M19 21V11l-6-3" />
+              </svg>
+              RedAmen Inmuebles — Casa de Estreno
+            </span>
+
+            <h3 class="y41-card-title">Casa de Estreno con Piscina y Doble Altura — Urb. Los Nogales</h3>
+
+            <div class="preventa2-price-row">
+              <span class="preventa2-price">USD $200,000</span>
+              <span class="preventa2-price-note">Casa de Estreno</span>
+            </div>
+
+            <div class="y41-card-location">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              Urb. Los Nogales, Chiclayo / Pimentel
+            </div>
+
+            <div class="y41-specs-grid">
+              <div class="y41-spec-item">
+                <span class="y41-spec-label">Área Techada</span>
+                <span class="y41-spec-val">200 m²</span>
+              </div>
+              <div class="y41-spec-item">
+                <span class="y41-spec-label">Dormitorios</span>
+                <span class="y41-spec-val">3 Dorm. + servicio</span>
+              </div>
+              <div class="y41-spec-item">
+                <span class="y41-spec-label">Baños</span>
+                <span class="y41-spec-val">5½ Baños (incl. piscina y serv.)</span>
+              </div>
+              <div class="y41-spec-item">
+                <span class="y41-spec-label">Cochera</span>
+                <span class="y41-spec-val">Levadiza en madera</span>
+              </div>
+            </div>
+
+            <!-- Características Principales y Destacadas -->
+            <div class="preventa2-callout" role="note">
+              <div class="preventa2-callout-header">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M12 22s8-4.5 8-11.8A8 8 0 0 0 12 2a8 8 0 0 0-8 8.2c0 7.3 8 11.8 8 11.8z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                <span>Características Principales y Destacadas</span>
+              </div>
+              <p class="preventa2-callout-text">
+                <strong>Piscina equipada con caída de agua y parrilla</strong>, sala familiar en 2do piso a doble altura,
+                cocina con isla en granito, dormitorio principal con walk-in closet y terraza, acabados en porcelanato,
+                agua caliente y cerradura con clave.
+              </p>
+            </div>
+
+            <div class="y41-finishes-chips">
+              <span class="y41-finish-chip">🏊‍♂️ Piscina + parrilla</span>
+              <span class="y41-finish-chip">✨ Sala doble altura</span>
+              <span class="y41-finish-chip">🍳 Cocina con isla en granito</span>
+              <span class="y41-finish-chip">🛏️ Principal con walk-in closet</span>
+              <span class="y41-finish-chip">🔐 Cerradura con clave</span>
+            </div>
+
+            <div class="y41-card-actions">
+              <button type="button" class="btn btn-primary btn-view-renders" id="btn-trigger-prop-015-modal"
+                data-title="Casa de Estreno con Piscina y Doble Altura — Urb. Los Nogales"
+                data-gallery="assets/NogalesF2/fachada.webp|assets/NogalesF2/piscina.webp|assets/NogalesF2/sala.webp|assets/NogalesF2/cocina.webp|assets/NogalesF2/doble_altura.webp|assets/NogalesF2/hab1.webp|assets/NogalesF2/hab2.webp|assets/NogalesF2/bano.webp|assets/NogalesF2/terraza.webp|assets/NogalesF2/lavanderia.webp"
+                data-finishes="Piscina equipada y enchapada con caída de agua, luces, rincón parrillero y baño propio;Cocina con amplia isla en granito, cocina empotrada, reposteros altos/bajos y despensa;Dormitorio principal con baño completo, walk-in closet, clóset adicional y terraza privada;2 dormitorios secundarios con clósets completos y baño propio con duchas en vidrio templado;Sala familiar en 2do piso a doble altura con gran iluminación y ventilación natural;Amplia sala-comedor, antesala, ½ baño de visita y terraza con vista a la calle;Seguridad y tecnología: cerradura exterior con clave, intercomunicador moderno y luces exteriores con sensores;Acabados de primera: pisos de fino porcelanato, paredes con estuco, agua caliente en toda la casa, cochera levadiza, lavandería amplia, cuarto/baño de servicio y depósito">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path
+                    d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                </svg>
+                <span>Ver 10 fotos</span>
+              </button>
+              <a href="https://wa.me/51987723930?text=Hola%20RedAmen%20Inmuebles,%20deseo%20informaci%C3%B3n%20y%20agendar%20visita%20para%20la%20Casa%20de%20Estreno%20con%20Piscina%20en%20Urb.%20Los%20Nogales%20(USD%20$200,000)."
+                target="_blank" rel="noopener noreferrer" class="btn btn-secondary" id="wa-prop-015">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                   <path
                     d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.456 5.711 1.457h.004c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
