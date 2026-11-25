@@ -143,12 +143,26 @@ document.addEventListener('DOMContentLoaded', () => {
   /* =============================================
      BOTÓN RÁPIDO WA en tarjeta (.btn-card-wa)
      ============================================= */
+  /** Determina si una tarjeta de propiedad está marcada como vendida */
+  function isCardSold(card) {
+    if (!card) return false;
+    const status = (card.dataset.status || card.getAttribute('data-status') || '').trim().toLowerCase();
+    return card.classList.contains('property-card--vendida') || status === 'vendida';
+  }
+
+  /** Construye el mensaje de WhatsApp según estado de la propiedad */
+  function buildCardWhatsAppMessage(card) {
+    const title = card.dataset.title || card.getAttribute('data-title') || '';
+    const id = card.dataset.id || card.getAttribute('data-id') || '';
+    if (isCardSold(card)) {
+      return `Hola RedAmen Inmuebles, vi que ya vendieron la ${title} (${id.toUpperCase()}). ¿Tienen alguna propiedad similar disponible?`;
+    }
+    return `Hola RedAmen Inmuebles, deseo información y agendar visita para ${title} (Código: ${id}).`;
+  }
+
   function handleCardWA(card) {
     if (!card) return;
-    const title = card.getAttribute('data-title') || '';
-    const id = card.getAttribute('data-id') || '';
-    const message = `Hola RedAmen Inmuebles, deseo información y agendar visita para ${title} (Código: ${id}).`;
-    openWhatsApp(message);
+    openWhatsApp(buildCardWhatsAppMessage(card));
   }
 
   /* =============================================
@@ -286,7 +300,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const gallery = card.dataset.gallery || card.getAttribute('data-gallery') || '';
 
     // Poblar texto
-    if (elStatusTag) elStatusTag.textContent = status;
+    const isSold = isCardSold(card);
+    if (elStatusTag) {
+      elStatusTag.textContent = status;
+      elStatusTag.classList.toggle('tag-status--vendida', isSold);
+    }
     if (elCode) elCode.textContent = id ? `Código: ${id}` : '';
     if (elTitle) elTitle.textContent = title;
     if (elLocation) elLocation.textContent = location;
@@ -336,8 +354,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // URL WhatsApp del modal
-    const waMessage = `Hola RedAmen Inmuebles, deseo información y agendar visita para ${title} (Código: ${id}).`;
+    const waMessage = buildCardWhatsAppMessage(card);
     waUrl = `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(waMessage)}`;
+
+    if (waBtn) {
+      let labelSpan = waBtn.querySelector('.modal-wa-label');
+      if (!labelSpan) {
+        Array.from(waBtn.childNodes).forEach(node => {
+          if (node.nodeType === Node.TEXT_NODE) waBtn.removeChild(node);
+        });
+        labelSpan = document.createElement('span');
+        labelSpan.className = 'modal-wa-label';
+        waBtn.appendChild(labelSpan);
+      }
+      labelSpan.textContent = isSold
+        ? 'Consultar propiedades similares por WhatsApp'
+        : 'Consultar disponibilidad por WhatsApp';
+    }
 
     modal.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';

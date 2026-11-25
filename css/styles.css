@@ -774,6 +774,18 @@ h3 {
   border-color: rgba(220, 38, 38, 0.28);
 }
 
+/* Vendida — Deep Red pill y desaturación de imagen */
+.property-card--vendida .card-header-img {
+  filter: grayscale(45%) brightness(0.85);
+}
+
+.tag-status--vendida {
+  background-color: #991b1b;
+  color: #ffffff;
+  font-weight: 700;
+  border-color: transparent;
+}
+
 /* ── WhatsApp botón rápido en tarjeta ── */
 .btn-card-wa {
   position: absolute;
