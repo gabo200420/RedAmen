@@ -309,7 +309,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (elTitle) elTitle.textContent = title;
     if (elLocation) elLocation.textContent = location;
     if (elPrice) elPrice.textContent = price;
-    if (elArea) elArea.textContent = area;
+    if (elArea) {
+      const hasArea = Boolean(area && area.trim() && area.trim() !== '—');
+      elArea.textContent = hasArea ? area : '';
+      const areaBlock = elArea.closest('.modal-price-block');
+      if (areaBlock) {
+        areaBlock.hidden = !hasArea;
+        areaBlock.style.display = hasArea ? '' : 'none';
+      }
+      const pricingGrid = elArea.closest('.modal-pricing');
+      if (pricingGrid) {
+        pricingGrid.style.gridTemplateColumns = hasArea ? '' : '1fr';
+      }
+    }
 
     // Galería vs placeholder (soporta delimitadores '|' y ',')
     const images = gallery ? gallery.split(/[|,]/).map(s => s.trim()).filter(Boolean) : [];
